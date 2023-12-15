@@ -1,0 +1,47 @@
+nav {
+    background-color: #fff;
+    padding: 8px;
+    position: fixed;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .div_logo {
+    display: flex;
+    align-items: center;
+}
+
+nav .div_logo img {
+    width: 40px;
+    height: 40px;
+}
+
+nav .div_logo span {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    margin-left: 8px;
+    color: #cf5273;
+}
+
+nav .div_buttons {
+    display: flex;
+    align-items: center;
+}
+
+nav .div_buttons svg {
+    font-size: 1.5em;
+    margin: 0 8px;
+    color: #cf5273;
+    padding: 8px;
+    cursor: pointer;
+}
+
+nav .div_buttons svg:hover {
+    background-color: #fac6d460;
+    border-radius: 8px;
+}
