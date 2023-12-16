@@ -7,6 +7,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 2;
 }
 
 nav .div_logo {
@@ -35,7 +36,7 @@ nav .div_buttons {
 
 nav .div_buttons svg {
     font-size: 1.5em;
-    margin: 0 8px;
+    margin: 0 12px;
     color: #cf5273;
     padding: 8px;
     cursor: pointer;
@@ -44,4 +45,19 @@ nav .div_buttons svg {
 nav .div_buttons svg:hover {
     background-color: #fac6d460;
     border-radius: 8px;
+}
+
+nav .div_buttons .n-cart {
+    position: relative;
+}
+
+nav .div_buttons .n-cart span {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    background-color: black;
+    color: #fff;
+    padding: 0 3px;
+    font-size: .9em;
+    border-radius: 25%;
 }

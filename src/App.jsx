@@ -1,18 +1,22 @@
 // router
-import { Routes, Route, Navigate } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 
 // components
 import SignUp from "./components/session/SignUp"
 import SignIn from "./components/session/SignIn"
 import Nav from "./components/nav/Nav"
 import Card from "./components/cards/Card"
+import Cart from "./components/cart/Cart"
+import Checkout from "./components/checkout/Checkout"
 
 function App() {
-  const session = true;
-
   return (
-    <>
-      {session ? (
+    <Routes>
+      <Route path="/bdebebe/sign-in" element={<SignIn/>}/>
+      <Route path="/bdebebe/sign-up" element={<SignUp/>}/>
+      <Route path="/bdebebe/cart" element={<Cart/>}/>
+      <Route path="/bdebebe/check-out" element={<Checkout/>}/>
+      <Route path="/bdebebe/" element={
         <>
           <Nav/>
           <div style={{ height: 75 }}></div>
@@ -20,14 +24,8 @@ function App() {
             <Card/>
           </div>
         </>
-      ) : (
-        <Routes>
-          <Route path="/sign-in" element={<SignIn />}/>
-          <Route path="/sign-up" element={<SignUp />}/>
-          <Route path="/*" element={<Navigate to="/sign-in" />} />
-        </Routes>
-      )}
-    </>
+      } />
+    </Routes>
   );
 }
 

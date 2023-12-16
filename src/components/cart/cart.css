@@ -1,0 +1,70 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    min-height: 100vh;
+    padding: 0 20px 20px;
+}
+
+.cart .c-buttons button {
+    background-color: red;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.cart .c-buttons button:last-child {
+    background-color: green;
+}
+
+.cart .c-box {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    min-height: calc(100vh - 80px);
+}
+
+.cart .c-box .c-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    padding: 0 10px;
+    flex-wrap: wrap;
+}
+
+.cart .c-box .c-card div {
+    display: flex;
+    align-items: center;
+}
+
+.cart .c-box .c-card div img {
+    width: 75px;
+    height: 75px;
+}
+
+.cart .c-box .c-card div p {
+    margin: 0 10px;
+    font-size: 1.1em;
+}
+
+.cart .c-box .c-card button {
+    background-color: red;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
