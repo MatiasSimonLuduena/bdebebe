@@ -1,11 +1,10 @@
+/* eslint-disable react/prop-types */
 import "./card.css"
 import { useEffect } from "react"
 
-import { products } from "../../data"
-
 import { useDispatch, useSelector } from "react-redux"
 
-const Card = () => {
+const Card = ({ products }) => {
     const dispatch = useDispatch();
     const state = useSelector(state => state);
 

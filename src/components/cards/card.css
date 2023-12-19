@@ -9,7 +9,7 @@
 .card {
     position: relative;
     width: 100%;
-    max-width: 240px;
+    max-width: 210px;
     height: auto;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 7px;

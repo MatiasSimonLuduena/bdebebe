@@ -1,0 +1,95 @@
+.search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 0 15px;
+}
+
+.search .s-filter {
+    width: 100%;
+    border-top: 1px solid rgb(200, 200, 200);
+    border-bottom: 1px solid rgb(200, 200, 200);
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.search .s-filter span {
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+/* MODAL */
+.modal-search {
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    overflow-y: auto;
+}
+
+.modal-search .ms-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.modal-search .ms-top button {
+    border: none;
+    background-color: transparent;
+    font-size: 1em;
+    color: black;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.modal-search .ms-top h4 {
+    text-transform: uppercase;
+}
+
+.modal-search .ms-main {
+    margin-top: 10px;
+}
+
+.modal-search .ms-main div {
+    width: 100%;
+    position: relative;
+    margin: 14px 0 10px;
+    padding-left: 15px;
+}
+
+.modal-search .ms-main div label {
+    display: block;
+    margin-left: 23px;
+}
+
+.modal-search .ms-main div input {
+    position: absolute;
+    top: 0;
+    width: 17px;
+    height: 17px;
+}
+
+.modal-search .ms-main p {
+    margin-left: 15px;
+    font-size: 1em;
+}
+
+.modal-search button {
+    border: none;
+    background-color: brown;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: .9em;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+}
