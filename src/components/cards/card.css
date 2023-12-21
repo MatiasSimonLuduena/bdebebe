@@ -9,7 +9,7 @@
 .card {
     position: relative;
     width: 100%;
-    max-width: 210px;
+    max-width: 200px;
     height: auto;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 7px;
@@ -34,7 +34,7 @@
     padding: 10px 15px 10px;
     box-sizing: border-box;
     background-color: rgb(212, 212, 212);
-    height: 45px;
+    height: 40px;
 }
 
 .card div:last-child {
@@ -45,7 +45,7 @@
 
 .card div h4 {
     margin: 0;
-    font-size: .9em;
+    font-size: .82em;
 }
 
 .card div p {

@@ -13,7 +13,7 @@ import Card from "./components/cards/Card"
 import Cart from "./components/cart/Cart"
 import Checkout from "./components/checkout/Checkout"
 
-import { products } from "./data"
+import { productsNene, productsNena } from "./data"
 
 function App() {
   const [modal, setModal] = useState(false);
@@ -29,81 +29,8 @@ function App() {
       false, false, false, false, false, false
     ]
   });
-  const [productsData, setProductsData] = useState(products);
 
-  function clicFilter() {
-    let filtered = products;
-
-    if (filters.nene) {
-      let newFilter = filtered.filter(item => item.sex === "Nene" || item.sex === "Nene/a")
-      filtered = newFilter;
-    }
-
-    if (filters.nena) {
-      let newFilter = filtered.filter(item => item.sex === "Nena" || item.sex === "Nene/a")
-      filtered = newFilter;
-    }
-
-    filters.talle.forEach((item, index) => {
-      if (item) {
-        let newFilter = filtered.filter(item => item.talle.includes(index + 1))
-        filtered = newFilter;
-      }
-    })
-
-    if (filters.abrigo) {
-      let newFilter = filtered.filter(item => item.categories.includes("Invierno"))
-      filtered = newFilter;
-    }
-
-    if (filters.verano) {
-      let newFilter = filtered.filter(item => item.categories.includes("Verano"))
-      filtered = newFilter;
-    }
-
-    filters.categoria.forEach((item, index) => {
-      const array = ["Shorts", "Bodies", "Remeras", "Pantalon", "Buzos", "Combos"]
-
-      if (item) {
-        let newFilter = filtered.filter(item => item.categories.includes(array[index]))
-        filtered = newFilter;
-      }
-    });
-
-    if (filters.shorts) {
-      let newFilter = filtered.filter(item => item.categories.includes("Shorts"))
-      filtered = newFilter;
-    }
-
-    if (filters.bodies) {
-      let newFilter = filtered.filter(item => item.categories.includes("Bodies"))
-      filtered = newFilter;
-    }
-
-    if (filters.remeras) {
-      let newFilter = filtered.filter(item => item.categories.includes("Remeras"))
-      filtered = newFilter;
-    }
-
-    if (filters.pantalones) {
-      let newFilter = filtered.filter(item => item.categories.includes("Pantalon"))
-      filtered = newFilter;
-    }
-
-    if (filters.buzos) {
-      let newFilter = filtered.filter(
-        item => item.categories.includes("Buzos") || item.categories.includes("Camperas")
-      )
-      filtered = newFilter;
-    }
-
-    if (filters.combos) {
-      let newFilter = filtered.filter(item => item.categories.includes("Combos"))
-      filtered = newFilter;
-    }
-
-    setProductsData(filtered);
-  }
+  const [productsData, setProductsData] = useState(productsNene);
 
   return (
     <Routes>
@@ -114,7 +41,7 @@ function App() {
       <Route path="/bdebebe/" element={
         <>
           {modal && <Modal
-            setModal={setModal} clic={clicFilter} filters={filters} setFilters={setFilters}
+            setModal={setModal} filters={filters} setFilters={setFilters}
           />}
           <Nav/>
           <div style={{ height: 75 }}></div>

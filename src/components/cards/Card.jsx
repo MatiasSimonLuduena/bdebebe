@@ -26,11 +26,10 @@ const Card = ({ products }) => {
                     <img src={item.img} alt={item.title} />
                     <div>
                         <h4>{item.title}</h4>
-                        <p>★{item.stars}</p>
                     </div>
                     <div>
-                        <p>{item.sex}</p>
-                        <p>Talle {item.talle}</p>
+                        <p>Nene</p>
+                        <p>Talle ...</p>
                     </div>
                 </div>
             ))}

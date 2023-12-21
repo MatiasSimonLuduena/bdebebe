@@ -1,379 +1,533 @@
-export const products = [
+export const productsNene = [
     {
-        img: "products/fb-1.jpeg", title: "Short Dino", stars: 1, sex: "Nene", talle: "4/5", id: 1,
-        categories: [ "Shorts", "Verano" ]
+        img: "products/b1.jpg", title: "Buzo 10", id: 1
     },
     {
-        img: "products/fb-2.jpeg", title: "Short Futbol", stars: 1, sex: "Nene", talle: "4/5", id: 2,
-        categories: [ "Shorts", "Verano" ]
+        img: "products/r1.jpg", title: "Remera Place", id: 2
     },
     {
-        img: "products/fb-3.jpg", title: "Short Cuadro", stars: 1, sex: "Nene", talle: "5/6", id: 3,
-        categories: [ "Shorts", "Verano" ]
+        img: "products/p2.jpg", title: "Pantalon Ciervo", id: 3
     },
     {
-        img: "products/fb-4.jpg", title: "Campera Jean", stars: 1, sex: "Nena", talle: "4/5", id: 4,
-        categories: [ "Buzos", "Invierno" ]
+        img: "products/r2.jpg", title: "Remera Volar", id: 4
     },
     {
-        img: "products/fb-5.jpg", title: "Remera L Dino", stars: 1, sex: "Nene", talle: "4", id: 5,
-        categories: [ "Remeras", "Invierno" ]
+        img: "products/s1.jpeg", title: "Short Dino", id: 5
     },
     {
-        img: "products/fb-6.jpg", title: "Body L Zorro", stars: 1, sex: "Nene", talle: "3", id: 6,
-        categories: [ "Bodies", "Invierno" ]
+        img: "products/bo1.jpg", title: "Body Ballena", id: 6
     },
     {
-        img: "products/zyro-1.jpg", title: "Remera Volar", stars: 1, sex: "Nene", talle: "6", id: 7,
-        categories: [ "Remeras", "Verano" ]
+        img: "products/p3.jpg", title: "Pantalon Tigger", id: 7
     },
     {
-        img: "products/zyro-2.jpg", title: "Short Rallas", stars: 1, sex: "Nene", talle: "5/6", id: 8,
-        categories: [ "Shorts", "Verano" ]
+        img: "products/s2.jpeg", title: "Short Futbol", id: 8
     },
     {
-        img: "products/zyro-3.jpg", title: "Remera bolsillo", stars: 1, sex: "Nene", talle: "6", id: 9,
-        categories: [ "Remeras", "Verano" ]
+        img: "products/bo2.jpg", title: "Jardinerito", id: 9
     },
     {
-        img: "products/zyro-4.jpg", title: "Short Negro", stars: 1, sex: "Nene", talle: "4/5", id: 10,
-        categories: [ "Shorts", "Verano" ]
+        img: "products/p4.jpg", title: "Pantalon Stars", id: 10
     },
     {
-        img: "products/zyro-5.jpg", title: "Short Negro 2", stars: 1, sex: "Nene", talle: "4/5", id: 11,
-        categories: [ "Shorts", "Verano" ]
+        img: "products/s3.jpg", title: "Short a Cuadros", id: 11
     },
     {
-        img: "products/zyro-6.jpg", title: "Short Hulk", stars: 1, sex: "Nene", talle: "4/5", id: 12,
-        categories: [ "Shorts", "Verano" ]
+        img: "products/b2.jpg", title: "Buzo Dino", id: 12
     },
     {
-        img: "products/zyro-7.jpg", title: "Short Boton", stars: 1, sex: "Nene", talle: "4/5", id: 13,
-        categories: [ "Shorts", "Verano" ]
+        img: "products/bo3.jpg", title: "Body Gris", id: 13
     },
     {
-        img: "products/zyro-8.jpg", title: "Body Boton", stars: 1, sex: "Nene/a", talle: "5/6", id: 14,
-        categories: [ "Bodies", "Verano" ]
+        img: "products/np3.jpg", title: "Pantalon Claro", id: 14
     },
     {
-        img: "products/zyro-9.jpg", title: "Short America", stars: 1, sex: "Nene", talle: "6", id: 15,
-        categories: [ "Shorts", "Verano" ]
+        img: "products/s4.jpg", title: "Short Gris", id: 15
     },
     {
-        img: "products/zyro-10.jpg", title: "Short Azul", stars: 1, sex: "Nene", talle: "4/5", id: 16,
-        categories: [ "Shorts", "Verano" ]
+        img: "products/p5.jpg", title: "Pantalon Verde", id: 16
     },
     {
-        img: "products/zyro-11.jpg", title: "Remera Rallas", stars: 1, sex: "Nene", talle: "4/5", id: 17,
-        categories: [ "Remeras", "Verano" ]
+        img: "products/bo4.jpg", title: "Body Piernas", id: 17
     },
     {
-        img: "products/zyro-12.jpg", title: "Remera World", stars: 1, sex: "Nene", talle: "4/5", id: 18,
-        categories: [ "Remeras", "Verano" ]
+        img: "products/r3.jpg", title: "Remera Bolsillo", id: 18
     },
     {
-        img: "products/zyro-13.jpg", title: "Remera Run", stars: 1, sex: "Nene", talle: "5/6", id: 19,
-        categories: [ "Remeras", "Verano" ]
+        img: "products/s5.jpg", title: "Malla Rallas", id: 19
     },
     {
-        img: "products/zyro-14.jpg", title: "Remera Hawai", stars: 1, sex: "Nene", talle: "4/5", id: 20,
-        categories: [ "Remeras", "Verano" ]
+        img: "products/p6.jpg", title: "Pantalon Blanco", id: 20
     },
     {
-        img: "products/zyro-15.jpg", title: "Remera Spirit", stars: 1, sex: "Nene", talle: "4/5", id: 21,
-        categories: [ "Remeras", "Verano" ]
+        img: "products/r4.jpg", title: "Remera NRallas", id: 21
     },
     {
-        img: "products/zyro-16.jpg", title: "Remera Musculosa", stars: 1, sex: "Nene", talle: "4/5",
-        id: 22, categories: [ "Remeras", "Verano" ]
+        img: "products/s6.jpg", title: "Short Negro", id: 22
     },
     {
-        img: "products/zyro-17.jpg", title: "Remera Dino", stars: 1, sex: "Nene", talle: "4/5", id: 23,
-        categories: [ "Remeras", "Verano" ]
+        img: "products/b3.jpg", title: "Buzo B&N", id: 23
     },
     {
-        img: "products/zyro-18.jpg", title: "Remera Musculosa 2", stars: 1, sex: "Nene", talle: "4/5", id: 24, categories: [ "Remeras", "Verano" ]
+        img: "products/np15.jpg", title: "Pantalon Manzana", id: 24
     },
     {
-        img: "products/zyro-19.jpg", title: "Remera Argentina", stars: 1, sex: "Nene", talle: "4/5", id: 25, categories: [ "Remeras", "Verano" ]
+        img: "products/nbo13.jpg", title: "Body Ratón", id: 25
     },
     {
-        img: "products/zyro-20.jpg", title: "Remera Jean", stars: 1, sex: "Nene", talle: "4/5", id: 26, categories: [ "Remeras", "Verano" ]
+        img: "products/b4.jpg", title: "Buzo White", id: 26
     },
     {
-        img: "products/zyro-21.jpg", title: "Remera Playa", stars: 1, sex: "Nene", talle: "4/5", id: 27, categories: [ "Remeras", "Verano" ]
+        img: "products/r5.jpg", title: "Remera Colorful", id: 27
     },
     {
-        img: "products/zyro-22.jpg", title: "Musculosa East", stars: 1, sex: "Nene", talle: "4/5", id: 28, categories: [ "Remeras", "Verano" ]
+        img: "products/bo5.jpg", title: "Body Rallas", id: 28
     },
     {
-        img: "products/zyro-23.jpg", title: "Remera Transformer", stars: 1, sex: "Nene", talle: "4/5", id: 29, categories: [ "Remeras", "Verano" ]
+        img: "products/p7.jpg", title: "Pantalon G&W", id: 29
     },
     {
-        img: "products/zyro-24.jpg", title: "Remera Gris", stars: 1, sex: "Nene", talle: "4/5", id: 30, categories: [ "Remeras", "Verano" ]
+        img: "products/s7.jpg", title: "Short Hulk", id: 30
     },
     {
-        img: "products/zyro-25.jpg", title: "Remera Luna", stars: 1, sex: "Nene", talle: "4/5", id: 31, categories: [ "Remeras", "Verano" ]
+        img: "products/r6.jpg", title: "Camiseta Argentina", id: 31
     },
     {
-        img: "products/zyro-26.jpg", title: "Remera America 2", stars: 1, sex: "Nene", talle: "4/5", id: 32, categories: [ "Remeras", "Verano" ]
+        img: "products/b5.jpg", title: "Campera a rallas", id: 32
     },
     {
-        img: "products/zyro-27.jpg", title: "Musculosa Among", stars: 1, sex: "Nene", talle: "4/5", id: 33, categories: [ "Remeras", "Verano" ]
+        img: "products/s8.jpg", title: "Bermuda C&M", id: 33
     },
     {
-        img: "products/zyro-28.jpg", title: "Musculosa Dino", stars: 1, sex: "Nene", talle: "4/5", id: 34, categories: [ "Remeras", "Verano" ]
+        img: "products/bo6.jpg", title: "Enterito Oso Negro", id: 34
     },
     {
-        img: "products/zyro-29.jpg", title: "Body Gris", stars: 1, sex: "Nene", talle: "4/5", id: 35, categories: [ "Bodies", "invierno" ]
+        img: "products/p8.jpg", title: "Pantalon Marron", id: 35
     },
     {
-        img: "products/zyro-30.jpg", title: "Body Lightyear", stars: 1, sex: "Nene", talle: "4/5", id: 36, categories: [ "Bodies", "Invierno" ]
+        img: "products/r7.jpg", title: "Remera Palmeras", id: 36
     },
     {
-        img: "products/zyro-31.jpg", title: "Body Donald", stars: 1, sex: "Nene", talle: "4/5", id: 37, categories: [ "Bodies", "Invierno" ]
+        img: "products/s9.jpg", title: "Malla America", id: 37
     },
     {
-        img: "products/zyro-32.jpg", title: "Body Donald N", stars: 1, sex: "Nene", talle: "4/5", id: 38, categories: [ "Bodies", "Invierno" ]
+        img: "products/r8.jpg", title: "Musculosa Marrón", id: 38
     },
     {
-        img: "products/zyro-34.jpg", title: "Body Goofy", stars: 1, sex: "Nene", talle: "4/5", id: 39, categories: [ "Bodies", "Invierno" ]
+        img: "products/nbo15.jpg", title: "Body Piel Roja", id: 39
     },
     {
-        img: "products/zyro-35.jpg", title: "Body Osos", stars: 1, sex: "Nene", talle: "4/5", id: 40, categories: [ "Bodies", "Invierno" ]
+        img: "products/b6.jpg", title: "Campera 123", id: 40
     },
     {
-        img: "products/zyro-36.jpg", title: "Remera Roja", stars: 1, sex: "Nene", talle: "4/5", id: 41, categories: [ "Remeras", "Verano" ]
+        img: "products/p9.jpg", title: "Pantalon Osito", id: 41
     },
     {
-        img: "products/zyro-37.jpg", title: "Buzo N", stars: 1, sex: "Nene", talle: "4/5", id: 42, categories: [ "Buzos", "Invierno" ]
+        img: "products/r9.jpg", title: "Remera Naranja", id: 42
     },
     {
-        img: "products/zyro-38.jpg", title: "Buzo Rallado", stars: 1, sex: "Nene", talle: "4/5", id: 43, categories: [ "Buzos", "Invierno" ]
+        img: "products/s10.jpg", title: "Short Azul", id: 43
     },
     {
-        img: "products/zyro-39.jpg", title: "Buzo Nandito", stars: 1, sex: "Nene", talle: "4/5", id: 44, categories: [ "Buzos", "Invierno" ]
+        img: "products/bo7.jpg", title: "Enterito Oso Blanco", id: 44
     },
     {
-        img: "products/zyro-40.jpg", title: "Campera Lana", stars: 1, sex: "Nene", talle: "4/5", id: 45, categories: [ "Buzos", "Invierno" ]
+        img: "products/b7.jpg", title: "Campera 123 Azul", id: 45
     },
     {
-        img: "products/zyro-41.jpg", title: "Campera Rallas", stars: 1, sex: "Nene", talle: "4/5", id: 46, categories: [ "Buzos", "Invierno" ]
+        img: "products/s11.jpg", title: "Bermuda Gris", id: 46
     },
     {
-        img: "products/zyro-42.jpg", title: "Campera Bunny", stars: 1, sex: "Nene", talle: "4/5", id: 47, categories: [ "Buzos", "Invierno" ]
+        img: "products/r10.jpg", title: "Camisita Blanca", id: 47
     },
     {
-        img: "products/zyro-43.jpg", title: "Campera Dinos", stars: 1, sex: "Nene", talle: "4/5", id: 48, categories: [ "Buzos", "Invierno" ]
+        img: "products/bo8.jpg", title: "Jardinerito Dino", id: 48
     },
     {
-        img: "products/zyro-44.jpg", title: "Campera Rallas N", stars: 1, sex: "Nene", talle: "4/5", id: 49, categories: [ "Buzos", "Invierno" ]
+        img: "products/r11.jpg", title: "Musculosa Camping", id: 49
     },
     {
-        img: "products/zyro-45.jpg", title: "Campera 123", stars: 1, sex: "Nene", talle: "4/5", id: 50, categories: [ "Buzos", "Invierno" ]
+        img: "products/s12.jpg", title: "Short Camuflado", id: 50
     },
     {
-        img: "products/zyro-46.jpg", title: "Campera AyG", stars: 1, sex: "Nene", talle: "4/5", id: 51, categories: [ "Buzos", "Invierno" ]
+        img: "products/p10.jpg", title: "Pantalon FaceBear", id: 51
     },
     {
-        img: "products/zyro-47.jpg", title: "Campera RyB", stars: 1, sex: "Nene", talle: "4/5", id: 52, categories: [ "Buzos", "Invierno" ]
+        img: "products/b8.jpg", title: "Campera B&R", id: 52
     },
     {
-        img: "products/zyro-48.jpg", title: "Remera Roja 2", stars: 1, sex: "Nene", talle: "4/5", id: 53, categories: [ "Remeras", "Verano" ]
+        img: "products/b9.jpg", title: "Campera Car", id: 53
     },
     {
-        img: "products/zyro-51.jpg", title: "Remera 60", stars: 1, sex: "Nene", talle: "4/5", id: 54, categories: [ "Remeras", "Invierno" ]
+        img: "products/r12.jpg", title: "Remera Saturno", id: 54
     },
     {
-        img: "products/zyro-52.jpg", title: "Remera L Dog", stars: 1, sex: "Nene", talle: "4/5", id: 55, categories: [ "Remeras", "Invierno" ]
+        img: "products/s13.jpg", title: "Short Bear", id: 55
     },
     {
-        img: "products/zyro-54.jpg", title: "Buzo Lana", stars: 1, sex: "Nene", talle: "4/5", id: 56, categories: [ "Buzos", "Invierno" ]
+        img: "products/bo9.jpg", title: "Enterito Elefante", id: 56
     },
     {
-        img: "products/zyro-55.jpg", title: "Remera L Rallas", stars: 1, sex: "Nene", talle: "4/5", id: 57, categories: [ "Remeras", "Invierno" ]
+        img: "products/r13.jpg", title: "Remera Soles", id: 57
     },
     {
-        img: "products/zyro-56.jpg", title: "Remera L Rallas B", stars: 1, sex: "Nene", talle: "4/5", id: 58, categories: [ "Remeras", "Invierno" ]
+        img: "products/p11.jpg", title: "Pantalon Dino", id: 58
     },
     {
-        img: "products/zyro-57.jpg", title: "Chomba Negra", stars: 1, sex: "Nene", talle: "4/5", id: 59, categories: [ "Remeras", "Verano" ]
+        img: "products/r14.jpg", title: "Remera Peces", id: 59
     },
     {
-        img: "products/zyro-58.jpg", title: "Pantalon Jean", stars: 1, sex: "Nene", talle: "4/5", id: 60, categories: [ "Pantalon", "Invierno" ]
+        img: "products/s14.jpg", title: "Malla Bear", id: 60
     },
     {
-        img: "products/zyro-59.jpg", title: "Pantalon Verde", stars: 1, sex: "Nene", talle: "4/5", id: 61, categories: [ "Pantalon", "Invierno" ]
+        img: "products/np14.jpg", title: "Pantalon Banana", id: 61
     },
     {
-        img: "products/zyro-60.jpg", title: "Pantalon Claro", stars: 1, sex: "Nene", talle: "4/5", id: 62, categories: [ "Pantalon", "Invierno" ]
+        img: "products/nbo1.jpg", title: "Body Piel", id: 62
     },
     {
-        img: "products/zyro-61.jpg", title: "Pantalon Mikey", stars: 1, sex: "Nene", talle: "4/5", id: 63, categories: [ "Pantalon", "Invierno" ]
+        img: "products/bo10.jpg", title: "Enterito Virus", id: 63
     },
     {
-        img: "products/zyro-62.jpg", title: "Pantalon Avion", stars: 1, sex: "Nene", talle: "4/5", id: 64, categories: [ "Pantalon", "Invierno" ]
+        img: "products/p12.jpg", title: "Pantalon White L", id: 64
     },
     {
-        img: "products/zyro-63.jpg", title: "Pantalon Army", stars: 1, sex: "Nene", talle: "4/5", id: 65, categories: [ "Pantalon", "Invierno" ]
+        img: "products/r15.jpg", title: "Remera Dino", id: 65
     },
     {
-        img: "products/zyro-64.jpg", title: "Musculosa Marron", stars: 1, sex: "Nene", talle: "4/5", id: 66, categories: [ "Remeras", "Verano" ]
+        img: "products/r16.jpg", title: "Remera Azul", id: 66
     },
     {
-        img: "products/zyro-65.jpg", title: "Pantalon Sports", stars: 1, sex: "Nene", talle: "4/5", id: 67, categories: [ "Pantalon", "Invierno" ]
+        img: "products/s15.jpg", title: "Short Globos", id: 67
     },
     {
-        img: "products/zyro-66.jpg", title: "Pantalon Buzo", stars: 1, sex: "Nene", talle: "4/5", id: 68, categories: [ "Pantalon", "Invierno" ]
+        img: "products/b10.jpg", title: "Campera Skate", id: 68
     },
     {
-        img: "products/zyro-67.jpg", title: "Remera Skate", stars: 1, sex: "Nene", talle: "4/5", id: 69, categories: [ "Remeras", "Invierno" ]
+        img: "products/bo11.jpg", title: "Body Oscuro", id: 69
     },
     {
-        img: "products/zyro-68.jpg", title: "Remera L Cars", stars: 1, sex: "Nene", talle: "4/5", id: 70, categories: [ "Pantalon", "Invierno" ]
+        img: "products/r17.jpg", title: "Remera Celeste", id: 70
     },
     {
-        img: "products/zyro-69.jpg", title: "Pantalon Blue", stars: 1, sex: "Nene", talle: "4/5", id: 71, categories: [ "Pantalon", "Invierno" ]
+        img: "products/np6.jpg", title: "Pantalon Gym", id: 71
     },
     {
-        img: "products/zyro-70.jpg", title: "Campera Autos", stars: 1, sex: "Nene", talle: "4/5", id: 72, categories: [ "Buzos", "Invierno" ]
+        img: "products/b11.jpg", title: "Campera NDog", id: 72
     },
     {
-        img: "products/zyro-71.jpg", title: "Remera Naranja", stars: 1, sex: "Nene", talle: "4/5", id: 73, categories: [ "Remeras", "Verano" ]
+        img: "products/nbo9.jpg", title: "Body Little", id: 73
     },
     {
-        img: "products/zyro-72.jpg", title: "Pantalon Naves", stars: 1, sex: "Nene", talle: "4/5", id: 74, categories: [ "Pantalon", "Invierno" ]
+        img: "products/r18.jpg", title: "Chomba Blanca", id: 74
     },
     {
-        img: "products/zyro-73.jpg", title: "Pantalon Figuras", stars: 1, sex: "Nene", talle: "4/5", id: 75, categories: [ "Pantalon", "Invierno" ]
+        img: "products/p13.jpg", title: "Pantalon Eyes", id: 75
     },
     {
-        img: "products/zyro-74.jpg", title: "Musculosa Car", stars: 1, sex: "Nene", talle: "4/5", id: 76, categories: [ "Remeras", "Verano" ]
+        img: "products/bo12.jpg", title: "Body Celeste", id: 76
     },
     {
-        img: "products/zyro-75.jpg", title: "Campera Wave", stars: 1, sex: "Nene", talle: "4/5", id: 77, categories: [ "Pantalon", "Invierno" ]
+        img: "products/r19.jpg", title: "Remera F&M", id: 77
     },
     {
-        img: "products/zyro-76.jpg", title: "Body Rallas R", stars: 1, sex: "Nene", talle: "4/5", id: 78, categories: [ "Bodies", "Verano" ]
+        img: "products/b12.jpg", title: "Camperita Oso", id: 78
     },
     {
-        img: "products/zyro-77.jpg", title: "Body Rallas V", stars: 1, sex: "Nene", talle: "4/5", id: 79, categories: [ "Bodies", "Verano" ]
+        img: "products/bo13.jpg", title: "Body Gray", id: 79
     },
     {
-        img: "products/zyro-78.jpg", title: "Body Mouse", stars: 1, sex: "Nene", talle: "4/5", id: 80, categories: [ "Bodies", "Invierno" ]
+        img: "products/r20.jpg", title: "Remera X&M", id: 80
     },
     {
-        img: "products/zyro-79.jpg", title: "Body Largo", stars: 1, sex: "Nene", talle: "4/5", id: 81, categories: [ "Bodies", "Invierno" ]
+        img: "products/b13.jpg", title: "Campera Osito", id: 81
     },
     {
-        img: "products/zyro-80.jpg", title: "Pantalon Gray", stars: 1, sex: "Nene", talle: "4/5", id: 82, categories: [ "Pantalon", "Invierno" ]
+        img: "products/s16.jpg", title: "Malla Azul", id: 82
     },
     {
-        img: "products/zyro-81.jpg", title: "Body Jirafa", stars: 1, sex: "Nene", talle: "4/5", id: 83, categories: [ "Bodies", "Invierno" ]
+        img: "products/nb12.jpg", title: "Campera Amarilla", id: 83
     },
     {
-        img: "products/zyro-82.jpg", title: "Body Largo 2", stars: 1, sex: "Nene", talle: "4/5", id: 84, categories: [ "Bodies", "Verano" ]
+        img: "products/r21.jpg", title: "Musculosa Ballena", id: 84
     },
     {
-        img: "products/zyro-83.jpg", title: "Body Rallado", stars: 1, sex: "Nene", talle: "4/5", id: 85, categories: [ "Bodies", "Verano" ]
+        img: "products/bo14.jpg", title: "Body C&V", id: 85
     },
     {
-        img: "products/zyro-84.jpg", title: "Pantalon Jean 2", stars: 1, sex: "Nene", talle: "4/5", id: 86, categories: [ "Pantalon", "Verano" ]
+        img: "products/bo15.jpg", title: "Body Planetario", id: 86
     },
     {
-        img: "products/zyro-85.jpg", title: "Remera Camion", stars: 1, sex: "Nene", talle: "4/5", id: 87, categories: [ "Remeras", "Verano" ]
+        img: "products/r22.jpg", title: "Musculosa Dino", id: 87
     },
     {
-        img: "products/zyro-86.jpg", title: "Remera L Oso", stars: 1, sex: "Nene", talle: "4/5", id: 88, categories: [ "Remeras", "Invierno" ]
+        img: "products/nb6.jpg", title: "Buzo Nubes", id: 88
     },
     {
-        img: "products/zyro-87.jpg", title: "Remera Playa 2", stars: 1, sex: "Nene", talle: "4/5", id: 89, categories: [ "Remeras", "Verano" ]
+        img: "products/nbo1.jpg", title: "Campera Amarilla", id: 89
     },
     {
-        img: "products/zyro-88.jpg", title: "Pantalon Lana", stars: 1, sex: "Nene", talle: "4/5", id: 90, categories: [ "Pantalon", "Verano" ]
+        img: "products/bo16.jpg", title: "Body Planetario", id: 90
     },
     {
-        img: "products/zyro-89.jpg", title: "Combo Roar", stars: 1, sex: "Nene", talle: "4/5", id: 91, categories: [ "Combos", "Verano" ]
+        img: "products/bo17.jpg", title: "Body Argentina", id: 91
     },
     {
-        img: "products/zyro-90.jpg", title: "Combo Oso", stars: 1, sex: "Nene", talle: "4/5", id: 92, categories: [ "Combos", "Invierno" ]
+        img: "products/bo18.jpg", title: "Body Militar", id: 92
     },
+]
+
+export const productsNena = [
     {
-        img: "products/zyro-91.jpg", title: "Chomba Blanca", stars: 1, sex: "Nene", talle: "4/5", id: 93, categories: [ "Remeras", "Verano" ]
+        img: "products/p9.jpg", title: "Pantalon Peluche", id: 1
     },
     {
-        img: "products/zyro-92.jpg", title: "Campera Dog", stars: 1, sex: "Nene", talle: "4/5", id: 94, categories: [ "Buzos", "Invierno" ]
+        img: "products/ns8.jpg", title: "Pollerita Rosa", id: 2
     },
     {
-        img: "products/zyro-93.jpg", title: "Enterito Oso", stars: 1, sex: "Nene", talle: "4/5", id: 95, categories: [ "Bodies", "Invierno" ]
+        img: "products/nr5.jpg", title: "Remera Rosa", id: 3
     },
     {
-        img: "products/zyro-94.jpg", title: "Enterito Oso 2", stars: 1, sex: "Nene", talle: "4/5", id: 96, categories: [ "Bodies", "Invierno" ]
+        img: "products/ne4.jpg", title: "Enterito Minnie 2", id: 4
     },
     {
-        img: "products/zyro-95.jpg", title: "Combo Claro", stars: 1, sex: "Nene", talle: "4/5", id: 97, categories: [ "Combos", "Invierno" ]
+        img: "products/nr3.jpg", title: "Remera Feliz", id: 5
     },
     {
-        img: "products/zyro-96.jpg", title: "Musculosa Camping", stars: 1, sex: "Nene", talle: "4/5", id: 98, categories: [ "Remeras", "Verano" ]
+        img: "products/nb1.jpg", title: "Buzo Love", id: 6
     },
     {
-        img: "products/zyro-97.jpg", title: "Campera Oso Gris", stars: 1, sex: "Nene", talle: "4/5", id: 99, categories: [ "Buzos", "Invierno" ]
+        img: "products/bo15.jpg", title: "EBody Planet", id: 7
     },
     {
-        img: "products/zyro-98.jpg", title: "Pantalon Oso Gris", stars: 1, sex: "Nene", talle: "4/5", id: 100, categories: [ "Pantalones", "Invierno" ]
+        img: "products/nr14.jpg", title: "Remera Cat Love", id: 8
     },
     {
-        img: "products/zyro-99.jpg", title: "Campera Lana Oso", stars: 1, sex: "Nene", talle: "3/4", id: 101, categories: [ "Buzos", "Invierno" ]
+        img: "products/p10.jpg", title: "Pantalon Osito", id: 9
     },
     {
-        img: "products/zyro-100.jpg", title: "Short Oscuro", stars: 1, sex: "Nene", talle: "4/5", id: 102, categories: [ "Shorts", "Verano" ]
+        img: "products/np2.jpg", title: "Pantalon Flores Rosas", id: 10
     },
     {
-        img: "products/zyro-101.jpg", title: "Combo Verde", stars: 1, sex: "Nene", talle: "4/5", id: 103, categories: [ "Combos", "Verano" ]
+        img: "products/nb2.jpg", title: "Buzo Princesa", id: 11
     },
     {
-        img: "products/zyro-102.jpg", title: "Remera Rallas AyV", stars: 1, sex: "Nene", talle: "4/5", id: 104, categories: [ "Remeras", "Verano" ]
+        img: "products/nb3.jpg", title: "Buzo Corazón", id: 12
     },
     {
-        img: "products/zyro-103.jpg", title: "Short Bermuda", stars: 1, sex: "Nene", talle: "4/5", id: 105, categories: [ "Shorts", "Verano" ]
+        img: "products/nbo14.jpg", title: "Body BsAs", id: 13
     },
     {
-        img: "products/zyro-104.jpg", title: "Body Pantalon", stars: 1, sex: "Nene", talle: "4/5", id: 106, categories: [ "Bodies", "Verano" ]
+        img: "products/nr13.jpg", title: "Remera Love", id: 14
     },
     {
-        img: "products/zyro-105.jpg", title: "Chomba Marrón", stars: 1, sex: "Nene", talle: "4/5", id: 107, categories: [ "Remeras", "Verano" ]
+        img: "products/np13.jpg", title: "Pantalon Piel", id: 15
     },
     {
-        img: "products/zyro-106.jpg", title: "Short Camuflado", stars: 1, sex: "Nene", talle: "4/5", id: 108, categories: [ "Shorts", "Verano" ]
+        img: "products/nb4.jpg", title: "Buzo Rosa", id: 16
     },
     {
-        img: "products/zyro-107.jpg", title: "Body Elefante", stars: 1, sex: "Nene", talle: "4/5", id: 109, categories: [ "Bodies", "Invierno" ]
+        img: "products/nbo13.jpg", title: "Body Ratón", id: 17
     },
     {
-        img: "products/zyro-108.jpg", title: "Remera Red Dog", stars: 1, sex: "Nene", talle: "4/5", id: 110, categories: [ "Remeras", "Verano" ]
+        img: "products/nr12.jpg", title: "Remera Daddy", id: 18
     },
     {
-        img: "products/zyro-109.jpg", title: "Pantalon Dinos 3", stars: 1, sex: "Nene", talle: "4/5", id: 111, categories: [ "Pantalon", "Invierno" ]
+        img: "products/np12.jpg", title: "Pantalon Stars", id: 19
     },
     {
-        img: "products/zyro-110.jpg", title: "Body Virus", stars: 1, sex: "Nene", talle: "4/5", id: 112, categories: [ "Bodies", "Verano" ]
+        img: "products/ne3.jpg", title: "Enterito Bird", id: 20
     },
     {
-        img: "products/zyro-111.jpg", title: "Body L Oscuro", stars: 1, sex: "Nene", talle: "4/5", id: 113, categories: [ "Bodies", "Invierno" ]
+        img: "products/ns7.jpg", title: "Malla Rallas", id: 21
     },
     {
-        img: "products/zyro-112.jpg", title: "Chomba Rallas", stars: 1, sex: "Nene", talle: "4/5", id: 114, categories: [ "Remeras", "Verano" ]
+        img: "products/p5.jpg", title: "Pantalon Osito", id: 22
     },
     {
-        img: "products/zyro-113.jpg", title: "Pantalon Claro", stars: 1, sex: "Nene", talle: "4/5", id: 115, categories: [ "Pantalon", "Invierno" ]
+        img: "products/nr11.jpg", title: "Remera Some", id: 23
     },
     {
-        img: "products/zyro-114.jpg", title: "Pantalon Ojos", stars: 1, sex: "Nene", talle: "4/5", id: 116, categories: [ "Pantalon", "Invierno" ]
+        img: "products/nb5.jpg", title: "Buzo Kitty", id: 24
     },
     {
-        img: "products/zyro-115.jpg", title: "Remera Celeste", stars: 1, sex: "Nene", talle: "4/5", id: 117, categories: [ "Remeras", "Invierno" ]
+        img: "products/nr10.jpg", title: "Remera Hello", id: 25
     },
     {
-        img: "products/zyro-116.jpg", title: "Body Cangrejo", stars: 1, sex: "Nene", talle: "4/5", id: 118, categories: [ "Bodies", "Verano" ]
-    }
+        img: "products/bo13.jpg", title: "Body White", id: 26
+    },
+    {
+        img: "products/np11.jpg", title: "Pantalon Vaquitas", id: 27
+    },
+    {
+        img: "products/ns1.jpg", title: "pollerita Marrón", id: 28
+    },
+    {
+        img: "products/nb6.jpg", title: "Buzo Nube", id: 29
+    },
+    {
+        img: "products/nr9.jpg", title: "Remera a Rallas", id: 30
+    },
+    {
+        img: "products/nbo12.jpg", title: "Body Jirafa", id: 31
+    },
+    {
+        img: "products/nb7.jpg", title: "Buzo LLL", id: 32
+    },
+    {
+        img: "products/nr8.jpg", title: "Remera Mariposa", id: 33
+    },
+    {
+        img: "products/np10.jpg", title: "Pantalon Piel F", id: 34
+    },
+    {
+        img: "products/nb8.jpg", title: "Buzo Corazón Rosa", id: 35
+    },
+    {
+        img: "products/ns6.jpg", title: "Short Flores", id: 36
+    },
+    {
+        img: "products/nbo11.jpg", title: "Body Flowers", id: 37
+    },
+    {
+        img: "products/ns4.jpg", title: "Short Malla", id: 38
+    },
+    {
+        img: "products/nr7.jpg", title: "Remera B&F", id: 39
+    },
+    {
+        img: "products/np9.jpg", title: "Pantalon Osito", id: 40
+    },
+    {
+        img: "products/nb9.jpg", title: "Buzo Hello Kitty", id: 41
+    },
+    {
+        img: "products/nbo10.jpg", title: "Body Valiente", id: 42
+    },
+    {
+        img: "products/nb10.jpg", title: "Buzo Bunny", id: 43
+    },
+    {
+        img: "products/nr6.jpg", title: "Remera Flores", id: 44
+    },
+    {
+        img: "products/np8.jpg", title: "Pantalon Abejita", id: 45
+    },
+    {
+        img: "products/nb11.jpg", title: "Buzo Pet", id: 46
+    },
+    {
+        img: "products/nr1.jpg", title: "Remera Girl White", id: 47
+    },
+    {
+        img: "products/nbo9.jpg", title: "Body Little", id: 48
+    },
+    {
+        img: "products/np7.jpg", title: "Pantalon Bear", id: 49
+    },
+    {
+        img: "products/nb12.jpg", title: "Campera Amarilla", id: 50
+    },
+    {
+        img: "products/bo11.jpg", title: "Body Negro", id: 51
+    },
+    {
+        img: "products/ns2.jpg", title: "Malla Flores", id: 52
+    },
+    {
+        img: "products/nbo8.jpg", title: "Body Flores Rojas", id: 53
+    },
+    {
+        img: "products/np6.jpg", title: "Pantalon Grey", id: 54
+    },
+    {
+        img: "products/ne2.jpg", title: "Enterito Minnie", id: 55
+    },
+    {
+        img: "products/nr4.jpg", title: "Remera Girls", id: 56
+    },
+    {
+        img: "products/nbo7.jpg", title: "Body Flores", id: 57
+    },
+    {
+        img: "products/b4.jpg", title: "Buzo White", id: 58
+    },
+    {
+        img: "products/nbo6.jpg", title: "Body Lite", id: 59
+    },
+    {
+        img: "products/np5.jpg", title: "Pantalon Piel Amarilla", id: 60
+    },
+    {
+        img: "products/ns3.jpg", title: "Short Blanco", id: 61
+    },
+    {
+        img: "products/b5.jpg", title: "Campera Rallada", id: 62
+    },
+    {
+        img: "products/bo7.jpg", title: "Enterito Ligth Oso", id: 63
+    },
+    {
+        img: "products/np3.jpg", title: "Pantalon Claro", id: 64
+    },
+    {
+        img: "products/nbo5.jpg", title: "Body Vaquitas", id: 65
+    },
+    {
+        img: "products/b12.jpg", title: "Campera Oso", id: 66
+    },
+    {
+        img: "products/nbo3.jpg", title: "Body Llama", id: 67
+    },
+    {
+        img: "products/np14.jpg", title: "Pantalon Bananas", id: 68
+    },
+    {
+        img: "products/b13.jpg", title: "Camperita Happy", id: 69
+    },
+    {
+        img: "products/nbo4.jpg", title: "Body Vaquita", id: 70
+    },
+    {
+        img: "products/nbo1.jpg", title: "Body Piel", id: 71
+    },
+    {
+        img: "products/p2.jpg", title: "Pantalon Ciervo", id: 72
+    },
+    {
+        img: "products/nbo2.jpg", title: "Body Blanco", id: 73
+    },
+    {
+        img: "products/ne1.jpg", title: "Enterito Pink", id: 74
+    },
+    {
+        img: "products/bo1.jpg", title: "Body Verde", id: 75
+    },
+    {
+        img: "products/p6.jpg", title: "Pantalon Blanco", id: 76
+    },
+    {
+        img: "products/bo3.jpg", title: "Body Gris", id: 77
+    },
+    {
+        img: "products/bo4.jpg", title: "Body Piernas", id: 78
+    },
+    {
+        img: "products/bo6.jpg", title: "Enterito Dark Oso", id: 79
+    },
+    {
+        img: "products/np15.jpg", title: "Pantalon Manzanas", id: 80
+    },
+    {
+        img: "products/p12.jpg", title: "Pantalon Blanco 2", id: 81
+    },
+    {
+        img: "products/nr2.jpg", title: "Remera White", id: 82
+    }, 
+    {
+        img: "products/ns5.jpg", title: "Short Celeste", id: 83
+    },
+    {
+        img: "products/nr15.jpg", title: "Remera Dinos", id: 84
+    },
 ]

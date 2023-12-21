@@ -24,8 +24,8 @@ const Modal = ({ setModal, clic, filters, setFilters }) => {
                 <br />
                 <p>Talles</p>
                 <div>
-                    <label htmlFor="1">1</label>
-                    <input type="checkbox" id="1"
+                    <label htmlFor="RN">RN</label>
+                    <input type="checkbox" id="RN"
                         checked={filters.talle[0]}
                         onChange={() => {
                             setFilters((prevFilters) => {
@@ -36,8 +36,8 @@ const Modal = ({ setModal, clic, filters, setFilters }) => {
                     />
                 </div>
                 <div>
-                    <label htmlFor="1">2</label>
-                    <input type="checkbox" id="2"
+                    <label htmlFor="1">1</label>
+                    <input type="checkbox" id="1"
                         checked={filters.talle[1]}
                         onChange={() => {
                             setFilters((prevFilters) => {
@@ -48,8 +48,8 @@ const Modal = ({ setModal, clic, filters, setFilters }) => {
                     />
                 </div>
                 <div>
-                    <label htmlFor="1">3</label>
-                    <input type="checkbox" id="3"
+                    <label htmlFor="2">2</label>
+                    <input type="checkbox" id="2"
                         checked={filters.talle[2]}
                         onChange={() => {
                             setFilters((prevFilters) => {
@@ -60,8 +60,8 @@ const Modal = ({ setModal, clic, filters, setFilters }) => {
                     />
                 </div>
                 <div>
-                    <label htmlFor="1">4</label>
-                    <input type="checkbox" id="4"
+                    <label htmlFor="3">3</label>
+                    <input type="checkbox" id="3"
                         checked={filters.talle[3]}
                         onChange={() => {
                             setFilters((prevFilters) => {
@@ -72,8 +72,8 @@ const Modal = ({ setModal, clic, filters, setFilters }) => {
                     />
                 </div>
                 <div>
-                    <label htmlFor="1">5</label>
-                    <input type="checkbox" id="5"
+                    <label htmlFor="4">4</label>
+                    <input type="checkbox" id="4"
                         checked={filters.talle[4]}
                         onChange={() => {
                             setFilters((prevFilters) => {
@@ -84,8 +84,8 @@ const Modal = ({ setModal, clic, filters, setFilters }) => {
                     />
                 </div>
                 <div>
-                    <label htmlFor="1">6</label>
-                    <input type="checkbox" id="6"
+                    <label htmlFor="5">5</label>
+                    <input type="checkbox" id="5"
                         checked={filters.talle[5]}
                         onChange={() => {
                             setFilters((prevFilters) => {
