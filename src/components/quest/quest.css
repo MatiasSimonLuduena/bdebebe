@@ -1,0 +1,72 @@
+.quest {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.quest h3 {
+    font-size: 1.2em;
+    max-width: 800px;
+    text-align: center;
+    color: #cf5273;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+.quest .quest-div {
+    margin: 10px 0;
+    text-align: start;
+    width: 100%;
+    max-width: 500px;
+}
+
+.quest .quest-div h4 {
+    font-size: 1.1em;
+    font-weight: 400;
+    margin: 5px;
+}
+
+.quest .quest-div div {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.quest .quest-div div input {
+    margin: 0 8px 0 5px;
+    width: 18px;
+    height: 18px;
+}
+
+.quest .quest-b1 {
+    text-transform: uppercase;
+    background-color: #cf5273;
+    border: none;
+    color: #fff;
+    padding: 8px 10px;
+    font-size: .9em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.quest .quest-b1:hover {
+    background-color: #e25e81;
+}
+
+.quest .quest-b2 {
+    text-transform: uppercase;
+    background-color: gray;
+    border: none;
+    color: #fff;
+    padding: 8px 10px;
+    font-size: .9em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}

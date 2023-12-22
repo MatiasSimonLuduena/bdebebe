@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Routes, Route } from "react-router-dom"
 
 // components
+import Quest from "./components/quest/Quest"
 import SignUp from "./components/session/SignUp"
 import SignIn from "./components/session/SignIn"
 import Nav from "./components/nav/Nav"
@@ -19,38 +20,45 @@ import {
 } from "./data"
 
 function App() {
-  const productsNene = {
-    buzos: buzos, bodies: bodies, pants: pants, shirt: remeras, shorts: shorts
-  };
+  const productsNene = { buzos: buzos, bodies: bodies, pants: pants, shirt: remeras, shorts: shorts }
 
   const productsNena = {
     buzos: buzosN, bodies: bodiesN, pants: pantsN, shirt: shirtsN, shorts: shortsN
   }
 
-  const [quest] = useState({ sex: "Nena" });
+  const [quest, setQuest] = useState(
+    localStorage.getItem("encuesta") ?
+    JSON.parse(localStorage.getItem("encuesta")) :
+    { sex: false, age: false, talle: false }
+  );
+  const [init, setInit] = useState(localStorage.getItem("encuesta") ? true : false);
   const [arrow, setArrow] = useState(false);
   const [modal, setModal] = useState("init");
 
   return (
-    <Routes>
-      <Route path="/bdebebe/sign-in" element={<SignIn/>}/>
-      <Route path="/bdebebe/sign-up" element={<SignUp/>}/>
-      <Route path="/bdebebe/cart" element={<Cart/>}/>
-      <Route path="/bdebebe/check-out" element={<Checkout/>}/>
-      <Route path="/bdebebe/" element={
-        <>
-          <Modal modal={modal} setModal={setModal}/>
-          <Nav/>
-          <Arrow arrow={arrow}/>
-          <Header/>
-          <div className="container">
-            <Card products={quest === "Nene" ? productsNene : productsNena}
-              setArrow={setArrow} setModal={setModal}
-            />
-          </div>
-        </>
-      } />
-    </Routes>
+    <>
+      {init ? (
+        <Routes>
+          <Route path="/bdebebe/sign-in" element={<SignIn/>}/>
+          <Route path="/bdebebe/sign-up" element={<SignUp/>}/>
+          <Route path="/bdebebe/cart" element={<Cart/>}/>
+          <Route path="/bdebebe/check-out" element={<Checkout/>}/>
+          <Route path="/bdebebe/" element={
+            <>
+              <Modal modal={modal} setModal={setModal}/>
+              <Nav/>
+              <Arrow arrow={arrow}/>
+              <Header/>
+              <div className="container">
+                <Card products={quest.sex === "nene" ? productsNene : productsNena}
+                  setArrow={setArrow} setModal={setModal}
+                />
+              </div>
+            </>
+          } />
+        </Routes>
+      ) : <Quest setQuest={setQuest} quest={quest} setInit={setInit}/>}
+    </>
   );
 }
 

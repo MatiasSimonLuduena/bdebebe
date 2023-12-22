@@ -9,7 +9,7 @@ const SignIn = () => {
         <input type="password" placeholder="Tu contraseña"/>
         <button>Iniciar sesion</button>
       </div>
-      <p>¿No tienes cuenta? <Link to="/sign-up">Crear cuenta</Link>.</p>
+      <p>¿No tienes cuenta? <Link to="/bdebebe/sign-up">Crear cuenta</Link>.</p>
     </div>
   )
 }

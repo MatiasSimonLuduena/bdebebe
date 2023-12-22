@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import "./card.css"
 import { useEffect } from "react"
+import { useNavigate } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux"
 
@@ -9,6 +10,8 @@ import { Element } from 'react-scroll';
 const Card = ({ products, setArrow, setModal }) => {
     const dispatch = useDispatch();
     const state = useSelector(state => state);
+    const navigate = useNavigate();
+    const { talle } = JSON.parse(localStorage.getItem("encuesta"));
 
     const { buzos, bodies, pants, shirt, shorts } = products
 
@@ -23,9 +26,13 @@ const Card = ({ products, setArrow, setModal }) => {
         <Element className="container-cards" name="cards">
             <h3>Remeras y musculosas</h3>
             <div className="cards">
-                {shirt.map((item, index) => (
-                    <div className="card" key={index}
+                {shirt.map(item => (
+                    <div className="card" key={item.id}
                         onClick={() => {
+                            if (!localStorage.getItem("session")) {
+                                navigate('/bdebebe/sign-up');
+                                return
+                            }
                             dispatch({ type: "ADD", payload: item });
 
                             if (!state.some(stateItem => stateItem.img === item.img)) {
@@ -44,7 +51,7 @@ const Card = ({ products, setArrow, setModal }) => {
                         </div>
                         <div>
                             <p>Nene</p>
-                            <p>Talle {  }</p>
+                            <p>Talle { talle }</p>
                         </div>
                     </div>
                 ))}
@@ -55,9 +62,13 @@ const Card = ({ products, setArrow, setModal }) => {
             </div>
             <h3>Shorts y Mallas</h3>
             <div className="cards">
-                {shorts.map((item, index) => (
-                    <div className="card" key={index}
+                {shorts.map(item => (
+                    <div className="card" key={item.id}
                         onClick={() => {
+                            if (!localStorage.getItem("session")) {
+                                navigate('/bdebebe/sign-up');
+                                return
+                            }
                             dispatch({ type: "ADD", payload: item });
 
                             if (!state.some(stateItem => stateItem.img === item.img)) {
@@ -76,7 +87,7 @@ const Card = ({ products, setArrow, setModal }) => {
                         </div>
                         <div>
                             <p>Nene</p>
-                            <p>Talle {  }</p>
+                            <p>Talle { talle }</p>
                         </div>
                     </div>
                 ))}
@@ -87,9 +98,13 @@ const Card = ({ products, setArrow, setModal }) => {
             </div>
             <h3>Bodies y enteritos</h3>
             <div className="cards">
-                {bodies.map((item, index) => (
-                    <div className="card" key={index}
+                {bodies.map(item => (
+                    <div className="card" key={item.id}
                         onClick={() => {
+                            if (!localStorage.getItem("session")) {
+                                navigate('/bdebebe/sign-up');
+                                return
+                            }
                             dispatch({ type: "ADD", payload: item });
 
                             if (!state.some(stateItem => stateItem.img === item.img)) {
@@ -108,7 +123,7 @@ const Card = ({ products, setArrow, setModal }) => {
                         </div>
                         <div>
                             <p>Nene</p>
-                            <p>Talle {  }</p>
+                            <p>Talle { talle }</p>
                         </div>
                     </div>
                 ))}
@@ -119,9 +134,13 @@ const Card = ({ products, setArrow, setModal }) => {
             </div>
             <h3>Buzos y camperas</h3>
             <div className="cards">
-                {buzos.map((item, index) => (
-                    <div className="card" key={index}
+                {buzos.map(item => (
+                    <div className="card" key={item.id}
                         onClick={() => {
+                            if (!localStorage.getItem("session")) {
+                                navigate('/bdebebe/sign-up');
+                                return
+                            }
                             dispatch({ type: "ADD", payload: item });
 
                             if (!state.some(stateItem => stateItem.img === item.img)) {
@@ -140,7 +159,7 @@ const Card = ({ products, setArrow, setModal }) => {
                         </div>
                         <div>
                             <p>Nene</p>
-                            <p>Talle {  }</p>
+                            <p>Talle { talle }</p>
                         </div>
                     </div>
                 ))}
@@ -151,9 +170,13 @@ const Card = ({ products, setArrow, setModal }) => {
             </div>
             <h3>Pantalones</h3>
             <div className="cards">
-                {pants.map((item, index) => (
-                    <div className="card" key={index}
+                {pants.map(item => (
+                    <div className="card" key={item.id}
                         onClick={() => {
+                            if (!localStorage.getItem("session")) {
+                                navigate('/bdebebe/sign-up');
+                                return
+                            }
                             dispatch({ type: "ADD", payload: item });
 
                             if (!state.some(stateItem => stateItem.img === item.img)) {
@@ -172,7 +195,7 @@ const Card = ({ products, setArrow, setModal }) => {
                         </div>
                         <div>
                             <p>Nene</p>
-                            <p>Talle {  }</p>
+                            <p>Talle { talle }</p>
                         </div>
                     </div>
                 ))}
