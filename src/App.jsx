@@ -12,10 +12,20 @@ import Card from "./components/cards/Card"
 import Cart from "./components/cart/Cart"
 import Checkout from "./components/checkout/Checkout"
 
-import { productsNene, productsNena } from "./data"
+import { 
+  bodies, buzos, pants, remeras, shorts, buzosN, bodiesN, pantsN, shirtsN, shortsN
+} from "./data"
 
 function App() {
-  const [productsData, setProductsData] = useState(productsNene);
+  const productsNene = {
+    buzos: buzos, bodies: bodies, pants: pants, shirt: remeras, shorts: shorts
+  };
+
+  const productsNena = {
+    buzos: buzosN, bodies: bodiesN, pants: pantsN, shirt: shirtsN, shorts: shortsN
+  }
+
+  const [quest, setQuest] = useState({ sex: "Nena" }); 
 
   return (
     <Routes>
@@ -28,7 +38,7 @@ function App() {
           <Nav/>
           <Header/>
           <div className="container">
-            <Card products={productsData}/>
+            <Card products={quest === "Nene" ? productsNene : productsNena}/>
           </div>
         </>
       } />

@@ -8,6 +8,8 @@ const Card = ({ products }) => {
     const dispatch = useDispatch();
     const state = useSelector(state => state);
 
+    const { buzos, bodies, pants, shirt, shorts } = products
+
     useEffect(() => {
         const storedState = localStorage.getItem("cart");
         if (storedState) {
@@ -16,23 +18,127 @@ const Card = ({ products }) => {
     }, [dispatch]);
 
     return (
-        <div className="cards">
-            {products.map((item, index) => (
-                <div className="card" key={index}
-                    onClick={() => dispatch({ type: "ADD", payload: item })}
-                >
-                    {state.some(cartItem => cartItem.id === item.id) &&
-                    <div className="card-capa"></div>}
-                    <img src={item.img} alt={item.title} />
-                    <div>
-                        <h4>{item.title}</h4>
+        <div className="container-cards">
+            <h3>Remeras y musculosas</h3>
+            <div className="cards">
+                {shirt.map((item, index) => (
+                    <div className="card" key={index}
+                        onClick={() => dispatch({ type: "ADD", payload: item })}
+                    >
+                        {state.some(cartItem => cartItem.id === item.id) &&
+                        <div className="card-capa"></div>}
+                        <img src={item.img} alt={item.title} />
+                        <div>
+                            <h4>{item.title}</h4>
+                            <p>${item.price}</p>
+                        </div>
+                        <div>
+                            <p>Nene</p>
+                            <p>Talle {  }</p>
+                        </div>
                     </div>
-                    <div>
-                        <p>Nene</p>
-                        <p>Talle ...</p>
+                ))}
+            </div>
+            <div className="cards-disconforme">
+                <p>¿Disconforme con nuestro stock de hoy en remeras y musculosas?</p>
+                <span>Quiero ver más</span>
+            </div>
+            <h3>Shorts y Mallas</h3>
+            <div className="cards">
+                {shorts.map((item, index) => (
+                    <div className="card" key={index}
+                        onClick={() => dispatch({ type: "ADD", payload: item })}
+                    >
+                        {state.some(cartItem => cartItem.id === item.id) &&
+                        <div className="card-capa"></div>}
+                        <img src={item.img} alt={item.title} />
+                        <div>
+                            <h4>{item.title}</h4>
+                            <p>${item.price}</p>
+                        </div>
+                        <div>
+                            <p>Nene</p>
+                            <p>Talle {  }</p>
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
+            <div className="cards-disconforme">
+                <p>¿Disconforme con nuestro stock de hoy en short y mallas?</p>
+                <span>Quiero ver más</span>
+            </div>
+            <h3>Bodies y enteritos</h3>
+            <div className="cards">
+                {bodies.map((item, index) => (
+                    <div className="card" key={index}
+                        onClick={() => dispatch({ type: "ADD", payload: item })}
+                    >
+                        {state.some(cartItem => cartItem.id === item.id) &&
+                        <div className="card-capa"></div>}
+                        <img src={item.img} alt={item.title} />
+                        <div>
+                            <h4>{item.title}</h4>
+                            <p>${item.price}</p>
+                        </div>
+                        <div>
+                            <p>Nene</p>
+                            <p>Talle {  }</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+            <div className="cards-disconforme">
+                <p>¿Disconforme con nuestro stock de hoy en bodies y enteritos?</p>
+                <span>Quiero ver más</span>
+            </div>
+            <h3>Buzos y camperas</h3>
+            <div className="cards">
+                {buzos.map((item, index) => (
+                    <div className="card" key={index}
+                        onClick={() => dispatch({ type: "ADD", payload: item })}
+                    >
+                        {state.some(cartItem => cartItem.id === item.id) &&
+                        <div className="card-capa"></div>}
+                        <img src={item.img} alt={item.title} />
+                        <div>
+                            <h4>{item.title}</h4>
+                            <p>${item.price}</p>
+                        </div>
+                        <div>
+                            <p>Nene</p>
+                            <p>Talle {  }</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+            <div className="cards-disconforme">
+                <p>¿Disconforme con nuestro stock de hoy en buzos y camperas?</p>
+                <span>Quiero ver más</span>
+            </div>
+            <h3>Pantalones</h3>
+            <div className="cards">
+                {pants.map((item, index) => (
+                    <div className="card" key={index}
+                        onClick={() => dispatch({ type: "ADD", payload: item })}
+                    >
+                        {state.some(cartItem => cartItem.id === item.id) &&
+                        <div className="card-capa"></div>}
+                        <img src={item.img} alt={item.title} />
+                        <div>
+                            <h4>{item.title}</h4>
+                            <p>${item.price}</p>
+                        </div>
+                        <div>
+                            <p>Nene</p>
+                            <p>Talle {  }</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+            <div className="cards-disconforme">
+                <p>¿Disconforme con nuestro stock de hoy en pantalones?</p>
+                <span>Quiero ver más</span>
+            </div>
         </div>
     );
 };
