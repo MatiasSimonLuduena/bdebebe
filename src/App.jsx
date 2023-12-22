@@ -7,6 +7,8 @@ import { Routes, Route } from "react-router-dom"
 import SignUp from "./components/session/SignUp"
 import SignIn from "./components/session/SignIn"
 import Nav from "./components/nav/Nav"
+import Arrow from "./components/arrow/Arrow"
+import Modal from "./components/modal/Modal"
 import Header from "./components/header/Header"
 import Card from "./components/cards/Card"
 import Cart from "./components/cart/Cart"
@@ -25,7 +27,9 @@ function App() {
     buzos: buzosN, bodies: bodiesN, pants: pantsN, shirt: shirtsN, shorts: shortsN
   }
 
-  const [quest, setQuest] = useState({ sex: "Nena" }); 
+  const [quest] = useState({ sex: "Nena" });
+  const [arrow, setArrow] = useState(false);
+  const [modal, setModal] = useState("init");
 
   return (
     <Routes>
@@ -35,10 +39,14 @@ function App() {
       <Route path="/bdebebe/check-out" element={<Checkout/>}/>
       <Route path="/bdebebe/" element={
         <>
+          <Modal modal={modal} setModal={setModal}/>
           <Nav/>
+          <Arrow arrow={arrow}/>
           <Header/>
           <div className="container">
-            <Card products={quest === "Nene" ? productsNene : productsNena}/>
+            <Card products={quest === "Nene" ? productsNene : productsNena}
+              setArrow={setArrow} setModal={setModal}
+            />
           </div>
         </>
       } />

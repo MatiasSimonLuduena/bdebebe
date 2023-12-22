@@ -4,7 +4,9 @@ import { useEffect } from "react"
 
 import { useDispatch, useSelector } from "react-redux"
 
-const Card = ({ products }) => {
+import { Element } from 'react-scroll';
+
+const Card = ({ products, setArrow, setModal }) => {
     const dispatch = useDispatch();
     const state = useSelector(state => state);
 
@@ -18,15 +20,23 @@ const Card = ({ products }) => {
     }, [dispatch]);
 
     return (
-        <div className="container-cards">
+        <Element className="container-cards" name="cards">
             <h3>Remeras y musculosas</h3>
             <div className="cards">
                 {shirt.map((item, index) => (
                     <div className="card" key={index}
-                        onClick={() => dispatch({ type: "ADD", payload: item })}
+                        onClick={() => {
+                            dispatch({ type: "ADD", payload: item });
+
+                            if (!state.some(stateItem => stateItem.img === item.img)) {
+                                setArrow(true);
+                                setTimeout(() => setArrow(false), 3000);
+                            }
+                        }}
                     >
                         {state.some(cartItem => cartItem.id === item.id) &&
-                        <div className="card-capa"></div>}
+                            <div className="card-capa">Reservado</div>
+                        }
                         <img src={item.img} alt={item.title} />
                         <div>
                             <h4>{item.title}</h4>
@@ -41,16 +51,24 @@ const Card = ({ products }) => {
             </div>
             <div className="cards-disconforme">
                 <p>¿Disconforme con nuestro stock de hoy en remeras y musculosas?</p>
-                <span>Quiero ver más</span>
+                <span onClick={() => setModal("in")}>Quiero ver más</span>
             </div>
             <h3>Shorts y Mallas</h3>
             <div className="cards">
                 {shorts.map((item, index) => (
                     <div className="card" key={index}
-                        onClick={() => dispatch({ type: "ADD", payload: item })}
+                        onClick={() => {
+                            dispatch({ type: "ADD", payload: item });
+
+                            if (!state.some(stateItem => stateItem.img === item.img)) {
+                                setArrow(true);
+                                setTimeout(() => setArrow(false), 3000);
+                            }
+                        }}
                     >
                         {state.some(cartItem => cartItem.id === item.id) &&
-                        <div className="card-capa"></div>}
+                            <div className="card-capa">Reservado</div>
+                        }
                         <img src={item.img} alt={item.title} />
                         <div>
                             <h4>{item.title}</h4>
@@ -65,16 +83,24 @@ const Card = ({ products }) => {
             </div>
             <div className="cards-disconforme">
                 <p>¿Disconforme con nuestro stock de hoy en short y mallas?</p>
-                <span>Quiero ver más</span>
+                <span onClick={() => setModal("in")}>Quiero ver más</span>
             </div>
             <h3>Bodies y enteritos</h3>
             <div className="cards">
                 {bodies.map((item, index) => (
                     <div className="card" key={index}
-                        onClick={() => dispatch({ type: "ADD", payload: item })}
+                        onClick={() => {
+                            dispatch({ type: "ADD", payload: item });
+
+                            if (!state.some(stateItem => stateItem.img === item.img)) {
+                                setArrow(true);
+                                setTimeout(() => setArrow(false), 3000);
+                            }
+                        }}
                     >
                         {state.some(cartItem => cartItem.id === item.id) &&
-                        <div className="card-capa"></div>}
+                            <div className="card-capa">Reservado</div>
+                        }
                         <img src={item.img} alt={item.title} />
                         <div>
                             <h4>{item.title}</h4>
@@ -89,16 +115,24 @@ const Card = ({ products }) => {
             </div>
             <div className="cards-disconforme">
                 <p>¿Disconforme con nuestro stock de hoy en bodies y enteritos?</p>
-                <span>Quiero ver más</span>
+                <span onClick={() => setModal("in")}>Quiero ver más</span>
             </div>
             <h3>Buzos y camperas</h3>
             <div className="cards">
                 {buzos.map((item, index) => (
                     <div className="card" key={index}
-                        onClick={() => dispatch({ type: "ADD", payload: item })}
+                        onClick={() => {
+                            dispatch({ type: "ADD", payload: item });
+
+                            if (!state.some(stateItem => stateItem.img === item.img)) {
+                                setArrow(true);
+                                setTimeout(() => setArrow(false), 3000);
+                            }
+                        }}
                     >
                         {state.some(cartItem => cartItem.id === item.id) &&
-                        <div className="card-capa"></div>}
+                            <div className="card-capa">Reservado</div>
+                        }
                         <img src={item.img} alt={item.title} />
                         <div>
                             <h4>{item.title}</h4>
@@ -113,16 +147,24 @@ const Card = ({ products }) => {
             </div>
             <div className="cards-disconforme">
                 <p>¿Disconforme con nuestro stock de hoy en buzos y camperas?</p>
-                <span>Quiero ver más</span>
+                <span onClick={() => setModal("in")}>Quiero ver más</span>
             </div>
             <h3>Pantalones</h3>
             <div className="cards">
                 {pants.map((item, index) => (
                     <div className="card" key={index}
-                        onClick={() => dispatch({ type: "ADD", payload: item })}
+                        onClick={() => {
+                            dispatch({ type: "ADD", payload: item });
+
+                            if (!state.some(stateItem => stateItem.img === item.img)) {
+                                setArrow(true);
+                                setTimeout(() => setArrow(false), 3000);
+                            }
+                        }}
                     >
                         {state.some(cartItem => cartItem.id === item.id) &&
-                        <div className="card-capa"></div>}
+                            <div className="card-capa">Reservado</div>
+                        }
                         <img src={item.img} alt={item.title} />
                         <div>
                             <h4>{item.title}</h4>
@@ -137,9 +179,9 @@ const Card = ({ products }) => {
             </div>
             <div className="cards-disconforme">
                 <p>¿Disconforme con nuestro stock de hoy en pantalones?</p>
-                <span>Quiero ver más</span>
+                <span onClick={() => setModal("in")}>Quiero ver más</span>
             </div>
-        </div>
+        </Element>
     );
 };
 
