@@ -1,12 +1,15 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useSelector } from "react-redux"
+
+// database
+import { doc, updateDoc } from 'firebase/firestore';
+import { firestore } from "./firebase"
 
 // router
 import { Routes, Route } from "react-router-dom"
 
 // components
 import Quest from "./components/quest/Quest"
-import SignUp from "./components/session/SignUp"
-import SignIn from "./components/session/SignIn"
 import Nav from "./components/nav/Nav"
 import Arrow from "./components/arrow/Arrow"
 import Modal from "./components/modal/Modal"
@@ -35,12 +38,24 @@ function App() {
   const [arrow, setArrow] = useState(false);
   const [modal, setModal] = useState("init");
 
+  const state = useSelector(state => state);
+
+  useEffect(() => {
+    async function db() {
+      try {
+        const documentRef = doc(firestore, "bdebebe", JSON.parse(localStorage.getItem("userId")));
+        await updateDoc(documentRef, { cart: state });
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    db();
+  }, [state]);
+
   return (
     <>
       {init ? (
         <Routes>
-          <Route path="/bdebebe/sign-in" element={<SignIn/>}/>
-          <Route path="/bdebebe/sign-up" element={<SignUp/>}/>
           <Route path="/bdebebe/cart" element={<Cart/>}/>
           <Route path="/bdebebe/check-out" element={<Checkout/>}/>
           <Route path="/bdebebe/" element={

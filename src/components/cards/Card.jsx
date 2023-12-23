@@ -1,7 +1,10 @@
 /* eslint-disable react/prop-types */
 import "./card.css"
 import { useEffect } from "react"
-import { useNavigate } from "react-router-dom";
+
+// database
+import { doc, updateDoc, arrayUnion} from 'firebase/firestore';
+import { firestore } from "../../firebase"
 
 import { useDispatch, useSelector } from "react-redux"
 
@@ -10,7 +13,6 @@ import { Element } from 'react-scroll';
 const Card = ({ products, setArrow, setModal }) => {
     const dispatch = useDispatch();
     const state = useSelector(state => state);
-    const navigate = useNavigate();
     const { talle } = JSON.parse(localStorage.getItem("encuesta"));
 
     const { buzos, bodies, pants, shirt, shorts } = products
@@ -22,6 +24,18 @@ const Card = ({ products, setArrow, setModal }) => {
         }
     }, [dispatch]);
 
+    async function disconforme(parm) {
+        setModal(["in", parm]);
+        try {
+            const docRef = doc(firestore, "bdebebe", JSON.parse(localStorage.getItem("userId")));
+            await updateDoc(docRef, {
+                disconforme: arrayUnion(`clic: ${parm}`)
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <Element className="container-cards" name="cards">
             <h3>Remeras y musculosas</h3>
@@ -29,12 +43,7 @@ const Card = ({ products, setArrow, setModal }) => {
                 {shirt.map(item => (
                     <div className="card" key={item.id}
                         onClick={() => {
-                            if (!localStorage.getItem("session")) {
-                                navigate('/bdebebe/sign-up');
-                                return
-                            }
                             dispatch({ type: "ADD", payload: item });
-
                             if (!state.some(stateItem => stateItem.img === item.img)) {
                                 setArrow(true);
                                 setTimeout(() => setArrow(false), 3000);
@@ -58,19 +67,14 @@ const Card = ({ products, setArrow, setModal }) => {
             </div>
             <div className="cards-disconforme">
                 <p>¿Disconforme con nuestro stock de hoy en remeras y musculosas?</p>
-                <span onClick={() => setModal("in")}>Quiero ver más</span>
+                <span onClick={() => disconforme("Remeras")}>Quiero ver más</span>
             </div>
             <h3>Shorts y Mallas</h3>
             <div className="cards">
                 {shorts.map(item => (
                     <div className="card" key={item.id}
                         onClick={() => {
-                            if (!localStorage.getItem("session")) {
-                                navigate('/bdebebe/sign-up');
-                                return
-                            }
                             dispatch({ type: "ADD", payload: item });
-
                             if (!state.some(stateItem => stateItem.img === item.img)) {
                                 setArrow(true);
                                 setTimeout(() => setArrow(false), 3000);
@@ -94,19 +98,14 @@ const Card = ({ products, setArrow, setModal }) => {
             </div>
             <div className="cards-disconforme">
                 <p>¿Disconforme con nuestro stock de hoy en short y mallas?</p>
-                <span onClick={() => setModal("in")}>Quiero ver más</span>
+                <span onClick={() => disconforme("Shorts")}>Quiero ver más</span>
             </div>
             <h3>Bodies y enteritos</h3>
             <div className="cards">
                 {bodies.map(item => (
                     <div className="card" key={item.id}
                         onClick={() => {
-                            if (!localStorage.getItem("session")) {
-                                navigate('/bdebebe/sign-up');
-                                return
-                            }
                             dispatch({ type: "ADD", payload: item });
-
                             if (!state.some(stateItem => stateItem.img === item.img)) {
                                 setArrow(true);
                                 setTimeout(() => setArrow(false), 3000);
@@ -130,19 +129,14 @@ const Card = ({ products, setArrow, setModal }) => {
             </div>
             <div className="cards-disconforme">
                 <p>¿Disconforme con nuestro stock de hoy en bodies y enteritos?</p>
-                <span onClick={() => setModal("in")}>Quiero ver más</span>
+                <span onClick={() => disconforme("Bodies")}>Quiero ver más</span>
             </div>
             <h3>Buzos y camperas</h3>
             <div className="cards">
                 {buzos.map(item => (
                     <div className="card" key={item.id}
                         onClick={() => {
-                            if (!localStorage.getItem("session")) {
-                                navigate('/bdebebe/sign-up');
-                                return
-                            }
                             dispatch({ type: "ADD", payload: item });
-
                             if (!state.some(stateItem => stateItem.img === item.img)) {
                                 setArrow(true);
                                 setTimeout(() => setArrow(false), 3000);
@@ -166,19 +160,14 @@ const Card = ({ products, setArrow, setModal }) => {
             </div>
             <div className="cards-disconforme">
                 <p>¿Disconforme con nuestro stock de hoy en buzos y camperas?</p>
-                <span onClick={() => setModal("in")}>Quiero ver más</span>
+                <span onClick={() => disconforme("Buzos")}>Quiero ver más</span>
             </div>
             <h3>Pantalones</h3>
             <div className="cards">
                 {pants.map(item => (
                     <div className="card" key={item.id}
                         onClick={() => {
-                            if (!localStorage.getItem("session")) {
-                                navigate('/bdebebe/sign-up');
-                                return
-                            }
                             dispatch({ type: "ADD", payload: item });
-
                             if (!state.some(stateItem => stateItem.img === item.img)) {
                                 setArrow(true);
                                 setTimeout(() => setArrow(false), 3000);
@@ -202,7 +191,7 @@ const Card = ({ products, setArrow, setModal }) => {
             </div>
             <div className="cards-disconforme">
                 <p>¿Disconforme con nuestro stock de hoy en pantalones?</p>
-                <span onClick={() => setModal("in")}>Quiero ver más</span>
+                <span onClick={() => disconforme("Pantalones")}>Quiero ver más</span>
             </div>
         </Element>
     );

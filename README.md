@@ -1,3 +1,5 @@
 App en desarrollo
 
-Final: Métricas, backend, host y url
+Final: host y url
+
+Metricas: click checkout - click ir a wsp

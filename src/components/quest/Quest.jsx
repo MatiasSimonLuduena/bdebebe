@@ -1,9 +1,32 @@
 /* eslint-disable react/prop-types */
 import "./quest.css"
+import { useState } from "react"
+
+import { collection, addDoc } from "firebase/firestore"
+import { firestore } from "../../firebase"
 
 const Quest = ({ setQuest, quest, setInit }) => {
+    const [load, setLoad] = useState(false);
+
+    async function clic() {
+        try {
+            setLoad(true);
+            const newDoc = await addDoc(collection(firestore, "bdebebe"), { encuesta: quest });
+            localStorage.setItem("encuesta", JSON.stringify(quest));
+            localStorage.setItem("userId", JSON.stringify(newDoc.id));
+            setInit(true);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
   return (
     <div className="quest">
+        {load && 
+            <div className="quest-load">
+                <div className="quest-loader"></div>
+            </div>
+        }
         <h3>
             Antes de mostrarte los productos, por favor, responde estas preguntas para poder personalizar el catálogo según tus necesidades. ¡Gracias!
         </h3>
@@ -25,26 +48,26 @@ const Quest = ({ setQuest, quest, setInit }) => {
         <div className="quest-div">
             <h4>Edad de tu bebé</h4>
             <div>
-                <input type="checkbox" id="e3" checked={quest.age === "3"}
-                    onChange={() => setQuest({...quest, age: "3"})}
+                <input type="checkbox" id="e3" checked={quest.age === "0 a 3"}
+                    onChange={() => setQuest({...quest, age: "0 a 3"})}
                 />
                 <label htmlFor="e3">0 a 3 meses</label>
             </div>
             <div>
-                <input type="checkbox" id="e6" checked={quest.age === "6"}
-                    onChange={() => setQuest({...quest, age: "6"})}
+                <input type="checkbox" id="e6" checked={quest.age === "3 a 9"}
+                    onChange={() => setQuest({...quest, age: "3 a 9"})}
                 />
                 <label htmlFor="e6">3 a 9 meses</label>
             </div>
             <div>
-                <input type="checkbox" id="e9" checked={quest.age === "9"}
-                    onChange={() => setQuest({...quest, age: "9"})}
+                <input type="checkbox" id="e9" checked={quest.age === "9 a 12"}
+                    onChange={() => setQuest({...quest, age: "9 a 12"})}
                 />
                 <label htmlFor="e9">9 a 12 meses</label>
             </div>
             <div>
-                <input type="checkbox" id="e12" checked={quest.age === "12"}
-                    onChange={() => setQuest({...quest, age: "12"})}
+                <input type="checkbox" id="e12" checked={quest.age === "12 a 18"}
+                    onChange={() => setQuest({...quest, age: "12 a 18"})}
                 />
                 <label htmlFor="e12">12 a 18 meses</label>
             </div>
@@ -107,10 +130,7 @@ const Quest = ({ setQuest, quest, setInit }) => {
             </div>
         </div>
         {quest.sex && quest.age && quest.talle ? (
-            <button onClick={() => {
-                localStorage.setItem("encuesta", JSON.stringify(quest));
-                setInit(true);
-            }} className="quest-b1">Continuar</button>
+            <button onClick={clic} className="quest-b1">Continuar</button>
         ) : (
             <button className="quest-b2">Continuar</button>
         )}

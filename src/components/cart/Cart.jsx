@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import "./cart.css"
 import { useDispatch, useSelector } from 'react-redux';
 
+// database
+import { doc, updateDoc } from 'firebase/firestore';
+import { firestore } from "../../firebase"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft, faTrash } from "@fortawesome/free-solid-svg-icons"
 
@@ -18,6 +22,15 @@ const Cart = () => {
         setTotal(n);
     }, [state]);
 
+    async function clic() {
+        try {
+            const docRef = doc(firestore, "bdebebe", JSON.parse(localStorage.getItem("userId")));
+            await updateDoc(docRef, { checkout: true });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <div className="cart">
             <div className="cart-nav">
@@ -26,9 +39,14 @@ const Cart = () => {
                     <button onClick={() => dispatch({ type: "DELETE_ALL" })}>
                         <FontAwesomeIcon icon={faTrash}/>
                     </button>
-                    {total > 0 && <Link to="/bdebebe/check-out">Comprar</Link>}
+                    {total > 5000 && <Link to="/bdebebe/check-out" onClick={clic}>Comprar</Link>}
                 </div>
             </div>
+            {total < 5000 && 
+                <p className="cart-minimo">
+                    El monto mínimo de compra son $5.000, regresa para seguir eligiendo.
+                </p>
+            }
             <div className="cart-cards">
                 {state.map((item, index)=> (<>
                     <div key={item.id} className="cart-card">
@@ -44,7 +62,7 @@ const Cart = () => {
             </div>
             <div className="cart-total">
                 <p>Monto total a pagar son ${total}</p>
-                {total > 0 && <Link to="/bdebebe/check-out">Comprar ahora</Link>}
+                {total > 5000 && <Link to="/bdebebe/check-out" onClick={clic}>Comprar ahora</Link>}
             </div>
         </div>
     )
