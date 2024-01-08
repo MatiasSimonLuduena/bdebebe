@@ -58,9 +58,9 @@ function App() {
     <>
       {init && !final ? (
         <Routes>
-          <Route path="/bdebebe/cart" element={<Cart/>}/>
-          <Route path="/bdebebe/check-out" element={<Checkout/>}/>
-          <Route path="/bdebebe/" element={
+          <Route path="/cart" element={<Cart/>}/>
+          <Route path="/check-out" element={<Checkout/>}/>
+          <Route path="/" element={
             <>
               <Wsp/>
               <Modal modal={modal} setModal={setModal}/>

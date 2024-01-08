@@ -19,7 +19,7 @@ const Nav = () => {
       <div className="div_buttons">
         <div className="n-cart">
           <span>{state.length}</span>
-          <Link to="/bdebebe/cart"><FontAwesomeIcon icon={faCartShopping}/></Link>
+          <Link to="/cart"><FontAwesomeIcon icon={faCartShopping}/></Link>
         </div>
       </div>
     </nav>

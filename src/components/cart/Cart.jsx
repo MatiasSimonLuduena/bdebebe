@@ -34,12 +34,12 @@ const Cart = () => {
     return (
         <div className="cart">
             <div className="cart-nav">
-                <Link to="/bdebebe/"><FontAwesomeIcon icon={faArrowLeft}/></Link>
+                <Link to="/"><FontAwesomeIcon icon={faArrowLeft}/></Link>
                 <div>
                     <button onClick={() => dispatch({ type: "DELETE_ALL" })}>
                         <FontAwesomeIcon icon={faTrash}/>
                     </button>
-                    {total > 12000 && <Link to="/bdebebe/check-out" onClick={clic}>Comprar</Link>}
+                    {total > 12000 && <Link to="/check-out" onClick={clic}>Comprar</Link>}
                 </div>
             </div>
             {total < 12000 && 
@@ -62,7 +62,7 @@ const Cart = () => {
             </div>
             <div className="cart-total">
                 <p>Monto total a pagar son ${total}</p>
-                {total > 5000 && <Link to="/bdebebe/check-out" onClick={clic}>Comprar ahora</Link>}
+                {total > 5000 && <Link to="/check-out" onClick={clic}>Comprar ahora</Link>}
             </div>
         </div>
     )
