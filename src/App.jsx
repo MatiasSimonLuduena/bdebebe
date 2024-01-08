@@ -17,6 +17,7 @@ import Header from "./components/header/Header"
 import Card from "./components/cards/Card"
 import Cart from "./components/cart/Cart"
 import Checkout from "./components/checkout/Checkout"
+import Wsp from "./components/wsp/Wsp";
 
 import { 
   bodies, buzos, pants, remeras, shorts, buzosN, bodiesN, pantsN, shirtsN, shortsN
@@ -32,9 +33,10 @@ function App() {
   const [quest, setQuest] = useState(
     localStorage.getItem("encuesta") ?
     JSON.parse(localStorage.getItem("encuesta")) :
-    { sex: false, age: false, talle: false }
+    { sex: false, age: false, talle: false, where: false }
   );
   const [init, setInit] = useState(localStorage.getItem("encuesta") ? true : false);
+  const [final] = useState(localStorage.getItem("final") ? true : false);
   const [arrow, setArrow] = useState(false);
   const [modal, setModal] = useState("init");
 
@@ -54,12 +56,13 @@ function App() {
 
   return (
     <>
-      {init ? (
+      {init && !final ? (
         <Routes>
           <Route path="/bdebebe/cart" element={<Cart/>}/>
           <Route path="/bdebebe/check-out" element={<Checkout/>}/>
           <Route path="/bdebebe/" element={
             <>
+              <Wsp/>
               <Modal modal={modal} setModal={setModal}/>
               <Nav/>
               <Arrow arrow={arrow}/>
@@ -72,7 +75,7 @@ function App() {
             </>
           } />
         </Routes>
-      ) : <Quest setQuest={setQuest} quest={quest} setInit={setInit}/>}
+      ) : <Quest setQuest={setQuest} quest={quest} setInit={setInit} final={final}/>}
     </>
   );
 }

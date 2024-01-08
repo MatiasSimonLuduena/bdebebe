@@ -15,7 +15,7 @@ const Header = () => {
       </h2>
       <p>✓ Todas las talles y estilos.</p>
       <p>✓ Reserva las prendas que te gusten.</p>
-      <p>✓ Ahorra tiempo y dinero.</p>
+      <p>✓ Devolución en tiempo y forma.</p>
       <Link to="cards" spy={true} smooth={true} offset={-80} duration={500}>
         <FontAwesomeIcon icon={faArrowDown}/>
       </Link>

@@ -5,13 +5,22 @@ import { useState } from "react"
 import { collection, addDoc } from "firebase/firestore"
 import { firestore } from "../../firebase"
 
-const Quest = ({ setQuest, quest, setInit }) => {
+const Quest = ({ setQuest, quest, setInit, final }) => {
     const [load, setLoad] = useState(false);
 
     async function clic() {
         try {
             setLoad(true);
+            if (final) {
+                return;
+            }
             const newDoc = await addDoc(collection(firestore, "bdebebe"), { encuesta: quest });
+
+            if (quest.talle === "mas" || quest.talle === "no segura") {
+                setLoad(false);
+                alert("No tenemos stock disponible en ese talle");
+                return;
+            }
             localStorage.setItem("encuesta", JSON.stringify(quest));
             localStorage.setItem("userId", JSON.stringify(newDoc.id));
             setInit(true);
@@ -79,7 +88,7 @@ const Quest = ({ setQuest, quest, setInit }) => {
             </div>
         </div>
         <div className="quest-div">
-            <h4>Talle</h4>
+            <h4>Talle (de bebé)</h4>
             <div>
                 <input type="checkbox" id="t0" checked={quest.talle === "0"}
                     onChange={() => setQuest({...quest, talle: "0"})}
@@ -117,19 +126,52 @@ const Quest = ({ setQuest, quest, setInit }) => {
                 <label htmlFor="t5">5</label>
             </div>
             <div>
-                <input type="checkbox" id="t6" checked={quest.talle === "6"}
-                    onChange={() => setQuest({...quest, talle: "6"})}
-                />
-                <label htmlFor="t6">6</label>
-            </div>
-            <div>
                 <input type="checkbox" id="tmas" checked={quest.talle === "mas"}
                     onChange={() => setQuest({...quest, talle: "mas"})}
                 />
                 <label htmlFor="tmas">Más</label>
             </div>
+            <div>
+                <input type="checkbox" id="tno" checked={quest.talle === "no segura"}
+                    onChange={() => setQuest({...quest, talle: "no segura"})}
+                />
+                <label htmlFor="tno">No se/no estoy segura del talle</label>
+            </div>
         </div>
-        {quest.sex && quest.age && quest.talle ? (
+        <div className="quest-div">
+            <h4>¿De dónde vienes?</h4>
+            <div>
+                <input type="checkbox" id="wadig" checked={quest.where === "publicidad en Instagram"}
+                    onChange={() => setQuest({...quest, where: "publicidad en Instagram"})}
+                />
+                <label htmlFor="wadig">Publicidad en Instagram</label>
+            </div>
+            <div>
+                <input type="checkbox" id="wadfb" checked={quest.where === "publicidad en Facebook"}
+                    onChange={() => setQuest({...quest, where: "publicidad en Facebook"})}
+                />
+                <label htmlFor="wadfb">Publicidad en Facebook</label>
+            </div>
+            <div>
+                <input type="checkbox" id="wcig" checked={quest.where === "perfil de Instagram"}
+                    onChange={() => setQuest({...quest, where: "perfil de Instagram"})}
+                />
+                <label htmlFor="wcig">Perfil de Instagram</label>
+            </div>
+            <div>
+                <input type="checkbox" id="wmrk" checked={quest.where === "Facebook Marketplace"}
+                    onChange={() => setQuest({...quest, where: "Facebook Marketplace"})}
+                />
+                <label htmlFor="wmrk">Facebook Marketplace</label>
+            </div>
+            <div>
+                <input type="checkbox" id="wwsp" checked={quest.where === "Whatsapp"}
+                    onChange={() => setQuest({...quest, where: "Whatsapp"})}
+                />
+                <label htmlFor="wwsp">Whatsapp</label>
+            </div>
+        </div>
+        {quest.sex && quest.age && quest.talle && quest.where ? (
             <button onClick={clic} className="quest-b1">Continuar</button>
         ) : (
             <button className="quest-b2">Continuar</button>

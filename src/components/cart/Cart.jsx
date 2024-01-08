@@ -39,12 +39,12 @@ const Cart = () => {
                     <button onClick={() => dispatch({ type: "DELETE_ALL" })}>
                         <FontAwesomeIcon icon={faTrash}/>
                     </button>
-                    {total > 5000 && <Link to="/bdebebe/check-out" onClick={clic}>Comprar</Link>}
+                    {total > 12000 && <Link to="/bdebebe/check-out" onClick={clic}>Comprar</Link>}
                 </div>
             </div>
-            {total < 5000 && 
+            {total < 12000 && 
                 <p className="cart-minimo">
-                    El monto mínimo de compra son $5.000, regresa para seguir eligiendo.
+                    El monto mínimo de compra son $12.000, regresa para seguir eligiendo.
                 </p>
             }
             <div className="cart-cards">
