@@ -2,14 +2,13 @@ import { useState, useEffect } from "react"
 import { useSelector } from "react-redux"
 
 // database
-import { doc, updateDoc } from 'firebase/firestore';
+import { doc, updateDoc, collection, addDoc } from 'firebase/firestore';
 import { firestore } from "./firebase"
 
 // router
 import { Routes, Route } from "react-router-dom"
 
 // components
-import Quest from "./components/quest/Quest"
 import Nav from "./components/nav/Nav"
 import Arrow from "./components/arrow/Arrow"
 import Modal from "./components/modal/Modal"
@@ -30,12 +29,6 @@ function App() {
     buzos: buzosN, bodies: bodiesN, pants: pantsN, shirt: shirtsN, shorts: shortsN
   }
 
-  const [quest, setQuest] = useState(
-    localStorage.getItem("encuesta") ?
-    JSON.parse(localStorage.getItem("encuesta")) :
-    { sex: false, age: false, talle: false, where: false }
-  );
-  const [init, setInit] = useState(localStorage.getItem("encuesta") ? true : false);
   const [final] = useState(localStorage.getItem("final") ? true : false);
   const [arrow, setArrow] = useState(false);
   const [modal, setModal] = useState("init");
@@ -43,9 +36,25 @@ function App() {
   const state = useSelector(state => state);
 
   useEffect(() => {
+    async function init() {
+      try {
+        if (localStorage.getItem("userId")) {
+          return
+        }
+        
+        const newDoc = await addDoc(collection(firestore, "bdebebe2"), { init: true });
+        localStorage.setItem("userId", JSON.stringify(newDoc.id));
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    init()
+  }, []);
+
+  useEffect(() => {
     async function db() {
       try {
-        const documentRef = doc(firestore, "bdebebe", JSON.parse(localStorage.getItem("userId")));
+        const documentRef = doc(firestore, "bdebebe2", JSON.parse(localStorage.getItem("userId")));
         await updateDoc(documentRef, { cart: state });
       } catch (error) {
         console.log(error);
@@ -56,7 +65,7 @@ function App() {
 
   return (
     <>
-      {init && !final ? (
+      {!final && (
         <Routes>
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/check-out" element={<Checkout/>}/>
@@ -68,14 +77,14 @@ function App() {
               <Arrow arrow={arrow}/>
               <Header/>
               <div className="container">
-                <Card products={quest.sex === "nene" ? productsNene : productsNena}
+                <Card products={{nene: productsNene, nena: productsNena}}
                   setArrow={setArrow} setModal={setModal}
                 />
               </div>
             </>
           } />
         </Routes>
-      ) : <Quest setQuest={setQuest} quest={quest} setInit={setInit} final={final}/>}
+      )}
     </>
   );
 }

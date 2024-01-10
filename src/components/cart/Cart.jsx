@@ -24,7 +24,7 @@ const Cart = () => {
 
     async function clic() {
         try {
-            const docRef = doc(firestore, "bdebebe", JSON.parse(localStorage.getItem("userId")));
+            const docRef = doc(firestore, "bdebebe2", JSON.parse(localStorage.getItem("userId")));
             await updateDoc(docRef, { checkout: true });
         } catch (error) {
             console.log(error);
@@ -39,12 +39,12 @@ const Cart = () => {
                     <button onClick={() => dispatch({ type: "DELETE_ALL" })}>
                         <FontAwesomeIcon icon={faTrash}/>
                     </button>
-                    {total > 12000 && <Link to="/check-out" onClick={clic}>Comprar</Link>}
+                    {total > 8000 && <Link to="/check-out" onClick={clic}>Comprar</Link>}
                 </div>
             </div>
-            {total < 12000 && 
+            {total < 8000 && 
                 <p className="cart-minimo">
-                    El monto mínimo de compra son $12.000, regresa para seguir eligiendo.
+                    El monto mínimo de compra son $8.000, regresa para seguir eligiendo.
                 </p>
             }
             <div className="cart-cards">
@@ -62,7 +62,7 @@ const Cart = () => {
             </div>
             <div className="cart-total">
                 <p>Monto total a pagar son ${total}</p>
-                {total > 5000 && <Link to="/check-out" onClick={clic}>Comprar ahora</Link>}
+                {total > 8000 && <Link to="/check-out" onClick={clic}>Comprar ahora</Link>}
             </div>
         </div>
     )

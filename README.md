@@ -1,1 +1,1 @@
-Versión 0.2 funcionando
+Versión 0.2.1 funcionando

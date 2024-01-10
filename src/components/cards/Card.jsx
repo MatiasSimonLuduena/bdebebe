@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import "./card.css"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 // database
 import { doc, updateDoc, arrayUnion} from 'firebase/firestore';
@@ -13,9 +13,9 @@ import { Element } from 'react-scroll';
 const Card = ({ products, setArrow, setModal }) => {
     const dispatch = useDispatch();
     const state = useSelector(state => state);
-    const { talle } = JSON.parse(localStorage.getItem("encuesta"));
+    const [sex, setSex] = useState("nene");
 
-    const { buzos, bodies, pants, shirt, shorts } = products
+    const { buzos, bodies, pants, shirt, shorts } = products[sex]
 
     useEffect(() => {
         const storedState = localStorage.getItem("cart");
@@ -38,6 +38,14 @@ const Card = ({ products, setArrow, setModal }) => {
 
     return (
         <Element className="container-cards" name="cards">
+            <div className="cards-sex">
+                <button onClick={() => sex !== "nene" && setSex("nene")}
+                    className={sex === "nena" && "button_disabled"}
+                >Nene</button>
+                <button onClick={() => sex !== "nena" && setSex("nena")}
+                    className={sex === "nene" && "button_disabled"}
+                >Nena</button>
+            </div>
             <h3>Remeras y musculosas</h3>
             <div className="cards">
                 {shirt.map(item => (
@@ -60,7 +68,7 @@ const Card = ({ products, setArrow, setModal }) => {
                         </div>
                         <div>
                             <p>Nene</p>
-                            <p>Talle { talle }</p>
+                            <p>Talle {item.id % 3 == 0 ? 0 : 1}</p>
                         </div>
                     </div>
                 ))}
@@ -91,7 +99,7 @@ const Card = ({ products, setArrow, setModal }) => {
                         </div>
                         <div>
                             <p>Nene</p>
-                            <p>Talle { talle }</p>
+                            <p>Talle {item.id % 3 == 0 ? 0 : 1}</p>
                         </div>
                     </div>
                 ))}
@@ -122,7 +130,7 @@ const Card = ({ products, setArrow, setModal }) => {
                         </div>
                         <div>
                             <p>Nene</p>
-                            <p>Talle { talle }</p>
+                            <p>Talle {item.id % 3 == 0 ? 0 : 1}</p>
                         </div>
                     </div>
                 ))}
@@ -153,7 +161,7 @@ const Card = ({ products, setArrow, setModal }) => {
                         </div>
                         <div>
                             <p>Nene</p>
-                            <p>Talle { talle }</p>
+                            <p>Talle {item.id % 3 == 0 ? 0 : 1}</p>
                         </div>
                     </div>
                 ))}
@@ -184,7 +192,7 @@ const Card = ({ products, setArrow, setModal }) => {
                         </div>
                         <div>
                             <p>Nene</p>
-                            <p>Talle { talle }</p>
+                            <p>Talle {item.id % 3 == 0 ? 0 : 1}</p>
                         </div>
                     </div>
                 ))}

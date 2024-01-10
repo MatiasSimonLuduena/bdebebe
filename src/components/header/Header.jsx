@@ -13,9 +13,10 @@ const Header = () => {
       <h2>
         Lotes super economicos para tu bebé.
       </h2>
-      <p>✓ Todas las talles y estilos.</p>
       <p>✓ Reserva las prendas que te gusten.</p>
+      <p>✓ Envio y pago en tu domicilio.</p>
       <p>✓ Devolución en tiempo y forma.</p>
+      <p>✓ Prendas higienizadas y en perfectas condiciones.</p>
       <Link to="cards" spy={true} smooth={true} offset={-80} duration={500}>
         <FontAwesomeIcon icon={faArrowDown}/>
       </Link>

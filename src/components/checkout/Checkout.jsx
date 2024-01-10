@@ -20,7 +20,7 @@ const Checkout = () => {
 
     async function clic() {
         try {
-            const docRef = doc(firestore, "bdebebe", JSON.parse(localStorage.getItem("userId")));
+            const docRef = doc(firestore, "bdebebe2", JSON.parse(localStorage.getItem("userId")));
             await updateDoc(docRef, { checkout: "FINALIZADO!", address: inputs });
             localStorage.setItem("final", "true");
             window.location.href = "https://wa.me/543518147093?text=He%20finalizado%20un%20pedido%20por%20el%20sitio%20web"
